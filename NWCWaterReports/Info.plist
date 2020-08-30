@@ -23,7 +23,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
+	<string>Home</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -41,5 +41,22 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Myriad Pro Regular.ttf</string>
+		<string>Myriad Pro Semibold.ttf</string>
+		<string>Myriad Pro Bold.ttf</string>
+		<string>Myriad Pro Light.otf</string>
+		<string>gess-bold.otf</string>
+		<string>gess-light.ttf</string>
+		<string>gess-med.ttf</string>
+		<string>gess-light.otf</string>
+		<string>gess-med.otf</string>
+		<string>gess-bold.ttf</string>
+	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Application wants to use your location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Application wants to use your location</string>
 </dict>
 </plist>

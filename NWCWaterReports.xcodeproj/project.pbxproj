@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,17 @@
 		28A2A65E24FBE72E00B68F05 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A65D24FBE72E00B68F05 /* Home.storyboard */; };
 		28A2A66124FBE93600B68F05 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A66024FBE93600B68F05 /* Colors.xcassets */; };
 		28A2A66324FBEA7E00B68F05 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A66224FBEA7E00B68F05 /* .gitignore */; };
+		28A2A66E24FBEC9B00B68F05 /* gess-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A66424FBEC9A00B68F05 /* gess-bold.otf */; };
+		28A2A66F24FBEC9B00B68F05 /* gess-med.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A66524FBEC9A00B68F05 /* gess-med.otf */; };
+		28A2A67024FBEC9B00B68F05 /* Myriad Pro Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A66624FBEC9A00B68F05 /* Myriad Pro Semibold.ttf */; };
+		28A2A67124FBEC9B00B68F05 /* gess-light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A66724FBEC9B00B68F05 /* gess-light.ttf */; };
+		28A2A67224FBEC9B00B68F05 /* Myriad Pro Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A66824FBEC9B00B68F05 /* Myriad Pro Light.otf */; };
+		28A2A67324FBEC9C00B68F05 /* gess-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A66924FBEC9B00B68F05 /* gess-light.otf */; };
+		28A2A67424FBEC9C00B68F05 /* gess-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A66A24FBEC9B00B68F05 /* gess-bold.ttf */; };
+		28A2A67524FBEC9C00B68F05 /* Myriad Pro Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A66B24FBEC9B00B68F05 /* Myriad Pro Bold.ttf */; };
+		28A2A67624FBEC9C00B68F05 /* Myriad Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A66C24FBEC9B00B68F05 /* Myriad Pro Regular.ttf */; };
+		28A2A67724FBEC9C00B68F05 /* gess-med.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A66D24FBEC9B00B68F05 /* gess-med.ttf */; };
+		28A2A67B24FBEDB000B68F05 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2A67A24FBEDB000B68F05 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +40,17 @@
 		28A2A65D24FBE72E00B68F05 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		28A2A66024FBE93600B68F05 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		28A2A66224FBEA7E00B68F05 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		28A2A66424FBEC9A00B68F05 /* gess-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gess-bold.otf"; sourceTree = "<group>"; };
+		28A2A66524FBEC9A00B68F05 /* gess-med.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gess-med.otf"; sourceTree = "<group>"; };
+		28A2A66624FBEC9A00B68F05 /* Myriad Pro Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Semibold.ttf"; sourceTree = "<group>"; };
+		28A2A66724FBEC9B00B68F05 /* gess-light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gess-light.ttf"; sourceTree = "<group>"; };
+		28A2A66824FBEC9B00B68F05 /* Myriad Pro Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Light.otf"; sourceTree = "<group>"; };
+		28A2A66924FBEC9B00B68F05 /* gess-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gess-light.otf"; sourceTree = "<group>"; };
+		28A2A66A24FBEC9B00B68F05 /* gess-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gess-bold.ttf"; sourceTree = "<group>"; };
+		28A2A66B24FBEC9B00B68F05 /* Myriad Pro Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Bold.ttf"; sourceTree = "<group>"; };
+		28A2A66C24FBEC9B00B68F05 /* Myriad Pro Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Regular.ttf"; sourceTree = "<group>"; };
+		28A2A66D24FBEC9B00B68F05 /* gess-med.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gess-med.ttf"; sourceTree = "<group>"; };
+		28A2A67A24FBEDB000B68F05 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3E7400FD322A33DAB03EB1A0 /* Pods_NWCWaterReports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NWCWaterReports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ADAB6D691EA8E72969FF879 /* Pods-NWCWaterReports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NWCWaterReports.release.xcconfig"; path = "Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports.release.xcconfig"; sourceTree = "<group>"; };
 		BA756735BBFF522F0DAE4ADF /* Pods-NWCWaterReports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NWCWaterReports.debug.xcconfig"; path = "Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports.debug.xcconfig"; sourceTree = "<group>"; };
@@ -68,7 +90,8 @@
 		28A2A64824FBE6F300B68F05 /* NWCWaterReports */ = {
 			isa = PBXGroup;
 			children = (
-				28A2A65F24FBE92000B68F05 /* New Group */,
+				28A2A67924FBED8200B68F05 /* Home */,
+				28A2A65F24FBE92000B68F05 /* Resource */,
 				28A2A64924FBE6F300B68F05 /* AppDelegate.swift */,
 				28A2A64D24FBE6F300B68F05 /* ViewController.swift */,
 				28A2A65D24FBE72E00B68F05 /* Home.storyboard */,
@@ -81,11 +104,37 @@
 			path = NWCWaterReports;
 			sourceTree = "<group>";
 		};
-		28A2A65F24FBE92000B68F05 /* New Group */ = {
+		28A2A65F24FBE92000B68F05 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				28A2A67824FBECBA00B68F05 /* Fonts */,
 			);
-			path = "New Group";
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		28A2A67824FBECBA00B68F05 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				28A2A66424FBEC9A00B68F05 /* gess-bold.otf */,
+				28A2A66A24FBEC9B00B68F05 /* gess-bold.ttf */,
+				28A2A66924FBEC9B00B68F05 /* gess-light.otf */,
+				28A2A66724FBEC9B00B68F05 /* gess-light.ttf */,
+				28A2A66524FBEC9A00B68F05 /* gess-med.otf */,
+				28A2A66D24FBEC9B00B68F05 /* gess-med.ttf */,
+				28A2A66B24FBEC9B00B68F05 /* Myriad Pro Bold.ttf */,
+				28A2A66824FBEC9B00B68F05 /* Myriad Pro Light.otf */,
+				28A2A66C24FBEC9B00B68F05 /* Myriad Pro Regular.ttf */,
+				28A2A66624FBEC9A00B68F05 /* Myriad Pro Semibold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		28A2A67924FBED8200B68F05 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				28A2A67A24FBEDB000B68F05 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		52B5B4B8EF18EDC360219AE4 /* Frameworks */ = {
@@ -116,6 +165,8 @@
 				28A2A64224FBE6F300B68F05 /* Sources */,
 				28A2A64324FBE6F300B68F05 /* Frameworks */,
 				28A2A64424FBE6F300B68F05 /* Resources */,
+				CA55DBE13F8F1CB87B932B36 /* [CP] Embed Pods Frameworks */,
+				7E399B27583A69C2C15B5317 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,12 +215,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28A2A67424FBEC9C00B68F05 /* gess-bold.ttf in Resources */,
+				28A2A66F24FBEC9B00B68F05 /* gess-med.otf in Resources */,
+				28A2A67224FBEC9B00B68F05 /* Myriad Pro Light.otf in Resources */,
 				28A2A66124FBE93600B68F05 /* Colors.xcassets in Resources */,
 				28A2A65624FBE6F400B68F05 /* LaunchScreen.storyboard in Resources */,
+				28A2A67324FBEC9C00B68F05 /* gess-light.otf in Resources */,
 				28A2A65324FBE6F400B68F05 /* Assets.xcassets in Resources */,
+				28A2A66E24FBEC9B00B68F05 /* gess-bold.otf in Resources */,
 				28A2A65124FBE6F300B68F05 /* Main.storyboard in Resources */,
 				28A2A66324FBEA7E00B68F05 /* .gitignore in Resources */,
 				28A2A65E24FBE72E00B68F05 /* Home.storyboard in Resources */,
+				28A2A67524FBEC9C00B68F05 /* Myriad Pro Bold.ttf in Resources */,
+				28A2A67624FBEC9C00B68F05 /* Myriad Pro Regular.ttf in Resources */,
+				28A2A67724FBEC9C00B68F05 /* gess-med.ttf in Resources */,
+				28A2A67024FBEC9B00B68F05 /* Myriad Pro Semibold.ttf in Resources */,
+				28A2A67124FBEC9B00B68F05 /* gess-light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +259,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7E399B27583A69C2C15B5317 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA55DBE13F8F1CB87B932B36 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -207,6 +302,7 @@
 			files = (
 				28A2A64E24FBE6F300B68F05 /* ViewController.swift in Sources */,
 				28A2A64A24FBE6F300B68F05 /* AppDelegate.swift in Sources */,
+				28A2A67B24FBEDB000B68F05 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
