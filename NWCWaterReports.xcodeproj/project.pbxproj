@@ -49,11 +49,11 @@
 		28A2A63D24FBE6F300B68F05 = {
 			isa = PBXGroup;
 			children = (
-				28A2A66224FBEA7E00B68F05 /* .gitignore */,
 				28A2A64824FBE6F300B68F05 /* NWCWaterReports */,
 				28A2A64724FBE6F300B68F05 /* Products */,
 				848CE0F56DC05FD1A303A65C /* Pods */,
 				52B5B4B8EF18EDC360219AE4 /* Frameworks */,
+				28A2A66224FBEA7E00B68F05 /* .gitignore */,
 			);
 			sourceTree = "<group>";
 		};
