@@ -10,18 +10,35 @@ import UIKit
 import IBAnimatable
 import CoreLocation
 import GoogleMaps
+import Localization
 
-
-struct Complaints{
-    var title:String
-    var image:String
-    var isSelected = false
-}
 
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     //    MARK:- Outlet
     
+    @IBOutlet weak var imageLabel: UILabel!{
+        didSet{
+            self.imageLabel.isHidden = true
+            self.imageLabel.layer.cornerRadius = self.imageLabel.frame.width/2
+            self.imageLabel.layer.masksToBounds = true
+        }
+    }
+    @IBOutlet weak var cancelBu: UIButton!{
+        didSet{
+            cancelBu.setTitle("cancel".localized(), for: .normal)
+        }
+    }
+    @IBOutlet weak var submitBu: UIButton!{
+        didSet{
+            submitBu.setTitle("submit".localized(), for: .normal)
+        }
+    }
+    @IBOutlet weak var reportTypeLabel: UILabel!{
+        didSet{
+            reportTypeLabel.text = "report_type".localized()
+        }
+    }
     @IBOutlet weak var getImageBu: UIButton!
     @IBOutlet weak var getImageFromCamiraBu: AnimatableButton!
     @IBOutlet weak var getLocationBu: UIButton!
@@ -32,17 +49,26 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             self.problemLabel.text = "description".localized()
         }
     }
-    @IBOutlet weak var problemTextView: AnimatableTextView!
+    @IBOutlet weak var problemTextView: AnimatableTextView!{
+        didSet{
+            problemTextView.placeholderText = "description".localized()
+        }
+    }
     
     //    MARK:- Properties
     var locationManager = CLLocationManager()
     var currentLoc: CLLocation!
     var complaintsList = [Complaints]()
-    
+    var formData = ComplaintsFormData()
     //    MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        getLocation()
+        setColorOfNav()
+        imageInNavBar()
+        let lati = CLLocationDegrees(exactly: 24.774265) ??  CLLocationDegrees()
+        let longi = CLLocationDegrees(exactly: 46.738586) ??  CLLocationDegrees()
+        let location = CLLocation(latitude: lati, longitude: longi)
+        self.setMap(location:location, zoom: 4)
         setDataForComplaints()
         self.problemCollectionView.delegate = self
         self.problemCollectionView.dataSource = self
@@ -67,22 +93,21 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func setMap(location:CLLocation){
+    func setMap(location:CLLocation,zoom:Float){
         
-        let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 12)
+        let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: zoom)
         let mapView = GMSMapView.map(withFrame: self.mapView.frame, camera: camera)
         self.mapView.addSubview(mapView)
         let marker = GMSMarker()
         marker.position = location.coordinate
         marker.title = "your_location".localized()
-        //        marker.snippet = "Australia"
         marker.map = mapView
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         print("locations = \(locValue.latitude) \(locValue.longitude)")
-        setMap(location:manager.location!)
+        setMap(location:manager.location!, zoom: 15)
     }
     //    MARK:- Action
     
@@ -90,9 +115,43 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         getLocation()
     }
     @IBAction func addImageFromCameraAction(_ sender: UIButton) {
+        self.openCamera()
     }
     @IBAction func addImageFromPhoneAction(_ sender: UIButton) {
+        self.openGallery()
     }
+    @IBAction func languageAction(_ sender: UIBarButtonItem) {
+        let preferredLanguage = Localization.preferredLanguage
+        if preferredLanguage != "en" {
+            Localization.preferredLanguage = LocalizableLanguage(code: LocalizableLanguage.english.code)!.code
+            languageCode = "en"
+            UIView.appearance().semanticContentAttribute = .forceLeftToRight
+            setupMainWindow()
+            UserDefaults.standard.set("en", forKey: "languageCode")
+            
+        } else if preferredLanguage != "ar" {
+            Localization.preferredLanguage = LocalizableLanguage(code: LocalizableLanguage.arabic.code)!.code
+            languageCode = "ar"
+            UIView.appearance().semanticContentAttribute = .forceRightToLeft
+            setupMainWindow()
+            UserDefaults.standard.set("ar", forKey: "languageCode")
+        }
+    }
+    @IBAction func submitAction(_ sender: UIButton) {
+        
+        
+        
+    }
+    
+    @IBAction func cancelAction(_ sender: UIButton) {
+        self.imageLabel.isHidden = true
+        self.formData.image = [UIImage]()
+        self.formData.descrption = ""
+        self.problemTextView.text = ""
+        self.setDataForComplaints()
+        
+    }
+    
     
     
 }
@@ -115,4 +174,51 @@ extension HomeViewController: UICollectionViewDelegate,  UICollectionViewDataSou
         return CGSize(width: 100 , height: 110)
     }
     
+}
+extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage
+        {
+            self.formData.image.append(image)
+            self.imageLabel.isHidden = false
+            self.imageLabel.text = "\(self.formData.image.count)"
+        }
+        picker.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func openCamera()
+    {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        else
+        {
+            let alert  = UIAlertController(title: "warning".localized(), message: "noـcamera".localized(), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func openGallery()
+    {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        else
+        {
+            let alert  = UIAlertController(title: "warning".localized(), message: "no_access_gallery".localized(), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok".localized(), style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 }

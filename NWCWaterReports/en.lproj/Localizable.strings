@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  NWCWaterReports
+
+  Created by Maged Omar on 8/31/20.
+  Copyright © 2020 NWC. All rights reserved.
+*/
+"cancel" = "Cancel";
+"submit" = "Submit";
+"report_type" = "Report Type";
+"description" = "Description";
+"water_misuse" = "Water Misuse";
+"sewage_overflow" = "Sewage Overflow";
+"leak_meter" = "Leak Meter";
+"water_leakage" = "Water Leakage";
+"your_location" = "Your Location";
+"warning" = "Warning";
+"You don't have camera" = "You don't have camera";
+"ok" = "OK";
+
+"You don't have permission to access gallery." = "You don't have permission to access gallery.";

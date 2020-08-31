@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  NWCWaterReports
+
+  Created by Maged Omar on 8/31/20.
+  Copyright © 2020 NWC. All rights reserved.
+*/
+"cancel" = "الغاء";
+"submit" = "تقديم";
+"report_type" = "نوع البلاغ";
+"description" = "وصف المشكلة";
+"water_misuse" = "سوء استخدام";
+"sewage_overflow" = "طفح صرف صحي";
+"leak_meter" = "تسريب من العداد";
+"water_leakage" = "تسريب من الشبكة";
+"your_location" = "موقعك الحالي";
+"warning" = "تحذير";
+"noـcamera" = "لا توجد كاميرا في هذا الجهاز";
+"ok" = "حسنا";
+
+"no_access_gallery." = "لا تملك الصلاحة للدخول الى معرض الصور.";

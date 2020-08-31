@@ -20,6 +20,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+    <key>NSCameraUsageDescription</key>
+    <string>App needs to access to Camera while Add a This Idea</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>App needs to access Photo Library while Add a This Idea</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>App needs to access Photo Library while Add a This Idea</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

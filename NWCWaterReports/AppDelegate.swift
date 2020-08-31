@@ -12,6 +12,7 @@ import Localization
 
 
 public let MAPS_KEY = "AIzaSyDq_07Sw8szGROZZLRGIaOjMtuHTwFVQa8"
+public var languageCode = Localization.preferredLanguage
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSServices.provideAPIKey(MAPS_KEY)
         //        GMSPlacesClient.provideAPIKey(MAPS_KEY)
+        Constants.setLanguage()
         return true
     }
+}
+func setupMainWindow(){
+    var rootVC : UINavigationController?
+    rootVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "Home") as? UINavigationController
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    appDelegate.window?.rootViewController = rootVC
 }
