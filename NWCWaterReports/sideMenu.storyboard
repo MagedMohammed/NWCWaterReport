@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Side Menu View Controller-->
+        <scene sceneID="Iuh-qm-pb2">
+            <objects>
+                <viewController id="sF5-ww-qMh" customClass="SideMenuViewController" customModule="NWCWaterReports" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5P5-rh-3rm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NcV-PB-eb2">
+                                <rect key="frame" x="0.0" y="88" width="414" height="448"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SideMenuTableViewCell" id="tUG-mB-Bhd" customClass="SideMenuTableViewCell" customModule="NWCWaterReports" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tUG-mB-Bhd" id="WOP-Ap-HFA">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dax-NS-xbC">
+                                                    <rect key="frame" x="337" y="-9.5" width="62" height="62.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="dax-NS-xbC" secondAttribute="height" id="eJO-Pt-4S1"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="T0d-yq-gzS">
+                                                    <rect key="frame" x="20" y="-9.5" width="302" height="62.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dax-NS-xbC" firstAttribute="centerY" secondItem="WOP-Ap-HFA" secondAttribute="centerY" id="56l-zg-lpV"/>
+                                                <constraint firstItem="dax-NS-xbC" firstAttribute="width" secondItem="WOP-Ap-HFA" secondAttribute="width" multiplier="0.15" id="682-9Y-ggA"/>
+                                                <constraint firstItem="T0d-yq-gzS" firstAttribute="leading" secondItem="WOP-Ap-HFA" secondAttribute="leadingMargin" id="7bA-ch-0wa"/>
+                                                <constraint firstItem="dax-NS-xbC" firstAttribute="leading" secondItem="T0d-yq-gzS" secondAttribute="trailing" constant="15" id="H9X-Ti-75b"/>
+                                                <constraint firstItem="T0d-yq-gzS" firstAttribute="height" secondItem="dax-NS-xbC" secondAttribute="height" id="XxE-x3-Hrf"/>
+                                                <constraint firstItem="T0d-yq-gzS" firstAttribute="centerY" secondItem="dax-NS-xbC" secondAttribute="centerY" id="YLT-7s-Iph"/>
+                                                <constraint firstItem="dax-NS-xbC" firstAttribute="trailing" secondItem="WOP-Ap-HFA" secondAttribute="trailingMargin" constant="5" id="zLU-OY-4mW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="iconImageView" destination="dax-NS-xbC" id="5Ry-kx-oJX"/>
+                                            <outlet property="titleLabel" destination="T0d-yq-gzS" id="Dtl-I8-y1i"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_nwc" translatesAutoresizingMaskIntoConstraints="NO" id="3i8-js-H7P">
+                                <rect key="frame" x="29.5" y="625" width="355" height="197"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3i8-js-H7P" secondAttribute="height" multiplier="1.8:1" id="It4-L4-uxD"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="PrimaryColor"/>
+                        <constraints>
+                            <constraint firstItem="NcV-PB-eb2" firstAttribute="leading" secondItem="jej-7w-K04" secondAttribute="leading" id="1qC-JQ-Abp"/>
+                            <constraint firstItem="3i8-js-H7P" firstAttribute="centerX" secondItem="jej-7w-K04" secondAttribute="centerX" id="3ri-z8-BKn"/>
+                            <constraint firstItem="3i8-js-H7P" firstAttribute="height" secondItem="5P5-rh-3rm" secondAttribute="height" multiplier="0.22" id="F1C-Ng-TSn"/>
+                            <constraint firstItem="3i8-js-H7P" firstAttribute="top" secondItem="NcV-PB-eb2" secondAttribute="bottom" constant="89" id="MHl-yv-uXe"/>
+                            <constraint firstItem="jej-7w-K04" firstAttribute="trailing" secondItem="NcV-PB-eb2" secondAttribute="trailing" id="tMi-oW-wqh"/>
+                            <constraint firstItem="jej-7w-K04" firstAttribute="bottom" secondItem="3i8-js-H7P" secondAttribute="bottom" constant="40" id="uZ4-pp-O2y"/>
+                            <constraint firstItem="NcV-PB-eb2" firstAttribute="top" secondItem="jej-7w-K04" secondAttribute="top" id="xPa-3Q-1dA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jej-7w-K04"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SdU-oV-QY1"/>
+                    <connections>
+                        <outlet property="tableView" destination="NcV-PB-eb2" id="rKc-Kh-qgi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5vw-Dx-etr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="997.10144927536237" y="118.52678571428571"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="60a-Is-pzj">
+            <objects>
+                <navigationController storyboardIdentifier="SideMenuViewController" automaticallyAdjustsScrollViewInsets="NO" id="2A0-9i-fpJ" customClass="SideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QU0-Ah-Eew">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sF5-ww-qMh" kind="relationship" relationship="rootViewController" id="cq0-Qd-1DM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lha-kS-xIK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86.956521739130437" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo_nwc" width="538" height="577"/>
+        <namedColor name="PrimaryColor">
+            <color red="0.24699999392032623" green="0.59200000762939453" blue="0.77300000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

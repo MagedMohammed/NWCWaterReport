@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PersonalDetailsViewController: UIViewController {
 
     //MARK: IBOutlets
     @IBOutlet weak var nameTF: UITextField!

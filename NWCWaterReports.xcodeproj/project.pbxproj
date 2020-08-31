@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		285D205F37555DC0CC2D0533 /* Pods_NWCWaterReports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E7400FD322A33DAB03EB1A0 /* Pods_NWCWaterReports.framework */; };
 		28A2A64A24FBE6F300B68F05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2A64924FBE6F300B68F05 /* AppDelegate.swift */; };
-		28A2A64E24FBE6F300B68F05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2A64D24FBE6F300B68F05 /* ViewController.swift */; };
+		28A2A64E24FBE6F300B68F05 /* PersonalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2A64D24FBE6F300B68F05 /* PersonalDetailsViewController.swift */; };
 		28A2A65124FBE6F300B68F05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A64F24FBE6F300B68F05 /* Main.storyboard */; };
 		28A2A65324FBE6F400B68F05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A65224FBE6F400B68F05 /* Assets.xcassets */; };
 		28A2A65624FBE6F400B68F05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A65424FBE6F400B68F05 /* LaunchScreen.storyboard */; };
@@ -27,12 +27,15 @@
 		28A2A67624FBEC9C00B68F05 /* Myriad Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A66C24FBEC9B00B68F05 /* Myriad Pro Regular.ttf */; };
 		28A2A67724FBEC9C00B68F05 /* gess-med.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A66D24FBEC9B00B68F05 /* gess-med.ttf */; };
 		28A2A67B24FBEDB000B68F05 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2A67A24FBEDB000B68F05 /* HomeViewController.swift */; };
+		3C64CDF324FCF507001FC054 /* sideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C64CDF224FCF507001FC054 /* sideMenu.storyboard */; };
+		3C64CDF524FCFC9B001FC054 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C64CDF424FCFC9B001FC054 /* SideMenuViewController.swift */; };
+		3CA6903524FD5897009A41F7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CA6903724FD5897009A41F7 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		28A2A64624FBE6F300B68F05 /* NWCWaterReports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NWCWaterReports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28A2A64924FBE6F300B68F05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		28A2A64D24FBE6F300B68F05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		28A2A64D24FBE6F300B68F05 /* PersonalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsViewController.swift; sourceTree = "<group>"; };
 		28A2A65024FBE6F300B68F05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28A2A65224FBE6F400B68F05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28A2A65524FBE6F400B68F05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +54,10 @@
 		28A2A66C24FBEC9B00B68F05 /* Myriad Pro Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Regular.ttf"; sourceTree = "<group>"; };
 		28A2A66D24FBEC9B00B68F05 /* gess-med.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gess-med.ttf"; sourceTree = "<group>"; };
 		28A2A67A24FBEDB000B68F05 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3C64CDF224FCF507001FC054 /* sideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = sideMenu.storyboard; sourceTree = "<group>"; };
+		3C64CDF424FCFC9B001FC054 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		3CA6903624FD5897009A41F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3CA6903824FD58B3009A41F7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E7400FD322A33DAB03EB1A0 /* Pods_NWCWaterReports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NWCWaterReports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ADAB6D691EA8E72969FF879 /* Pods-NWCWaterReports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NWCWaterReports.release.xcconfig"; path = "Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports.release.xcconfig"; sourceTree = "<group>"; };
 		BA756735BBFF522F0DAE4ADF /* Pods-NWCWaterReports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NWCWaterReports.debug.xcconfig"; path = "Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,9 +100,12 @@
 				28A2A67924FBED8200B68F05 /* Home */,
 				28A2A65F24FBE92000B68F05 /* Resource */,
 				28A2A64924FBE6F300B68F05 /* AppDelegate.swift */,
-				28A2A64D24FBE6F300B68F05 /* ViewController.swift */,
+				28A2A64D24FBE6F300B68F05 /* PersonalDetailsViewController.swift */,
+				3C64CDF424FCFC9B001FC054 /* SideMenuViewController.swift */,
+				3CA6903724FD5897009A41F7 /* Localizable.strings */,
 				28A2A65D24FBE72E00B68F05 /* Home.storyboard */,
 				28A2A64F24FBE6F300B68F05 /* Main.storyboard */,
+				3C64CDF224FCF507001FC054 /* sideMenu.storyboard */,
 				28A2A65224FBE6F400B68F05 /* Assets.xcassets */,
 				28A2A65424FBE6F400B68F05 /* LaunchScreen.storyboard */,
 				28A2A65724FBE6F400B68F05 /* Info.plist */,
@@ -166,7 +176,7 @@
 				28A2A64324FBE6F300B68F05 /* Frameworks */,
 				28A2A64424FBE6F300B68F05 /* Resources */,
 				CA55DBE13F8F1CB87B932B36 /* [CP] Embed Pods Frameworks */,
-				7E399B27583A69C2C15B5317 /* [CP] Copy Pods Resources */,
+				8792AA231F4E36DEA828725F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,6 +209,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 28A2A63D24FBE6F300B68F05;
 			productRefGroup = 28A2A64724FBE6F300B68F05 /* Products */;
@@ -228,8 +239,10 @@
 				28A2A65E24FBE72E00B68F05 /* Home.storyboard in Resources */,
 				28A2A67524FBEC9C00B68F05 /* Myriad Pro Bold.ttf in Resources */,
 				28A2A67624FBEC9C00B68F05 /* Myriad Pro Regular.ttf in Resources */,
+				3CA6903524FD5897009A41F7 /* Localizable.strings in Resources */,
 				28A2A67724FBEC9C00B68F05 /* gess-med.ttf in Resources */,
 				28A2A67024FBEC9B00B68F05 /* Myriad Pro Semibold.ttf in Resources */,
+				3C64CDF324FCF507001FC054 /* sideMenu.storyboard in Resources */,
 				28A2A67124FBEC9B00B68F05 /* gess-light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,7 +272,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7E399B27583A69C2C15B5317 /* [CP] Copy Pods Resources */ = {
+		8792AA231F4E36DEA828725F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -300,7 +313,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28A2A64E24FBE6F300B68F05 /* ViewController.swift in Sources */,
+				3C64CDF524FCFC9B001FC054 /* SideMenuViewController.swift in Sources */,
+				28A2A64E24FBE6F300B68F05 /* PersonalDetailsViewController.swift in Sources */,
 				28A2A64A24FBE6F300B68F05 /* AppDelegate.swift in Sources */,
 				28A2A67B24FBEDB000B68F05 /* HomeViewController.swift in Sources */,
 			);
@@ -325,6 +339,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		3CA6903724FD5897009A41F7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3CA6903624FD5897009A41F7 /* en */,
+				3CA6903824FD58B3009A41F7 /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -332,6 +355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -392,6 +416,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -448,8 +473,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GYL5PPR88;
 				INFOPLIST_FILE = NWCWaterReports/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -467,8 +493,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GYL5PPR88;
 				INFOPLIST_FILE = NWCWaterReports/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

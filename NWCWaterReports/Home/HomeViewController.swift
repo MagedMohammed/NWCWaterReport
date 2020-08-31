@@ -10,6 +10,7 @@ import UIKit
 import IBAnimatable
 import CoreLocation
 import GoogleMaps
+import SideMenu
 
 
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
@@ -28,12 +29,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
     var currentLoc: CLLocation!
     
-    
     //    MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         getLocation()
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "hamburger"), style: .done, target: self, action: #selector(didTapMenu))
     }
     //    MARK:- Method
     func getLocation() {
@@ -46,6 +46,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
 //        }
+    }
+    
+    @objc func didTapMenu(){
+        let storyboard = UIStoryboard(name: "sideMenu", bundle: nil)
+               let menu = storyboard.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuNavigationController
+               DispatchQueue.main.async {
+                   self.present(menu, animated: true, completion: nil)
+               }
     }
     
     func setMap(location:CLLocation){
