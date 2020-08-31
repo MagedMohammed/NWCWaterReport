@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import Localization
 
 
 public let MAPS_KEY = "AIzaSyDq_07Sw8szGROZZLRGIaOjMtuHTwFVQa8"

@@ -27,6 +27,7 @@
 		28A2A67624FBEC9C00B68F05 /* Myriad Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A66C24FBEC9B00B68F05 /* Myriad Pro Regular.ttf */; };
 		28A2A67724FBEC9C00B68F05 /* gess-med.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A66D24FBEC9B00B68F05 /* gess-med.ttf */; };
 		28A2A67B24FBEDB000B68F05 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2A67A24FBEDB000B68F05 /* HomeViewController.swift */; };
+		28A2A67E24FCCE5100B68F05 /* ComplaintsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2A67D24FCCE5100B68F05 /* ComplaintsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		28A2A66C24FBEC9B00B68F05 /* Myriad Pro Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Regular.ttf"; sourceTree = "<group>"; };
 		28A2A66D24FBEC9B00B68F05 /* gess-med.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gess-med.ttf"; sourceTree = "<group>"; };
 		28A2A67A24FBEDB000B68F05 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		28A2A67D24FCCE5100B68F05 /* ComplaintsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintsCollectionViewCell.swift; sourceTree = "<group>"; };
 		3E7400FD322A33DAB03EB1A0 /* Pods_NWCWaterReports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NWCWaterReports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ADAB6D691EA8E72969FF879 /* Pods-NWCWaterReports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NWCWaterReports.release.xcconfig"; path = "Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports.release.xcconfig"; sourceTree = "<group>"; };
 		BA756735BBFF522F0DAE4ADF /* Pods-NWCWaterReports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NWCWaterReports.debug.xcconfig"; path = "Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,9 +134,18 @@
 		28A2A67924FBED8200B68F05 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				28A2A67C24FCCE1800B68F05 /* Cell */,
 				28A2A67A24FBEDB000B68F05 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		28A2A67C24FCCE1800B68F05 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				28A2A67D24FCCE5100B68F05 /* ComplaintsCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		52B5B4B8EF18EDC360219AE4 /* Frameworks */ = {
@@ -302,6 +313,7 @@
 			files = (
 				28A2A64E24FBE6F300B68F05 /* ViewController.swift in Sources */,
 				28A2A64A24FBE6F300B68F05 /* AppDelegate.swift in Sources */,
+				28A2A67E24FCCE5100B68F05 /* ComplaintsCollectionViewCell.swift in Sources */,
 				28A2A67B24FBEDB000B68F05 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

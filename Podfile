@@ -11,4 +11,6 @@ target 'NWCWaterReports' do
   #  Desgin
   pod 'IBAnimatable'
   pod 'IQKeyboardManager' #iOS8 and later
+  pod 'Localization'
+
 end

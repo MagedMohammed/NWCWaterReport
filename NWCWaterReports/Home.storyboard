@@ -37,6 +37,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="138" height="60"/>
                                                         <color key="backgroundColor" name="GrayColor"/>
                                                         <state key="normal" title="Image"/>
+                                                        <connections>
+                                                            <action selector="addImageFromPhoneAction:" destination="414-RD-AK7" eventType="touchUpInside" id="zmG-GD-Y8P"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rd1-Ay-Bud" customClass="AnimatableButton" customModule="IBAnimatable">
                                                         <rect key="frame" x="138" y="0.0" width="138" height="60"/>
@@ -51,6 +54,9 @@
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="_borderSides" value="left, right"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="addImageFromCameraAction:" destination="414-RD-AK7" eventType="touchUpInside" id="eAx-C6-bKE"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVn-X1-fEO">
                                                         <rect key="frame" x="276" y="0.0" width="138" height="60"/>
@@ -59,39 +65,42 @@
                                                             <constraint firstAttribute="height" constant="60" id="8Ot-uw-7GI"/>
                                                         </constraints>
                                                         <state key="normal" title="getLocation"/>
+                                                        <connections>
+                                                            <action selector="getLocationAction:" destination="414-RD-AK7" eventType="touchUpInside" id="5VN-nc-OjA"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sdz-5w-ugO">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sdz-5w-ugO">
                                                 <rect key="frame" x="0.0" y="290" width="414" height="128"/>
                                                 <color key="backgroundColor" name="GrayColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="128" id="k1h-PG-yr2"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NuB-yy-ksJ">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="NuB-yy-ksJ">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="z2I-cK-1yd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ComplaintsCollectionViewCell" id="z2I-cK-1yd" customClass="ComplaintsCollectionViewCell" customModule="NWCWaterReports" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="9" width="100" height="110"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="oyp-4h-Uzt">
-                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="110"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Li7-zg-4Yj">
-                                                                    <rect key="frame" x="29" y="8" width="70" height="70"/>
+                                                                    <rect key="frame" x="20" y="8" width="60" height="60"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="70" id="Dkd-jm-r2J"/>
-                                                                        <constraint firstAttribute="height" constant="70" id="xx9-Kw-hRr"/>
+                                                                        <constraint firstAttribute="width" constant="60" id="Dkd-jm-r2J"/>
+                                                                        <constraint firstAttribute="height" constant="60" id="xx9-Kw-hRr"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong use" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPv-Ta-7iS">
-                                                                    <rect key="frame" x="8" y="86" width="112" height="34"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <rect key="frame" x="8" y="76" width="84" height="26"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <color key="textColor" name="PrimaryColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -105,7 +114,11 @@
                                                                 <constraint firstItem="Li7-zg-4Yj" firstAttribute="top" secondItem="oyp-4h-Uzt" secondAttribute="top" constant="8" id="hdY-nr-WlG"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
-                                                        <size key="customSize" width="128" height="128"/>
+                                                        <size key="customSize" width="100" height="110"/>
+                                                        <connections>
+                                                            <outlet property="complaintImage" destination="Li7-zg-4Yj" id="gwf-On-MCz"/>
+                                                            <outlet property="complaintTitleLabel" destination="fPv-Ta-7iS" id="wSH-Wx-Tki"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
@@ -132,6 +145,15 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Proplem Description"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="12"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textView>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPN-cn-Xnb">
@@ -230,10 +252,10 @@
     <resources>
         <image name="tick" width="256" height="256"/>
         <namedColor name="GrayColor">
-            <color red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.90200001001358032" green="0.90200001001358032" blue="0.90200001001358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PrimaryColor">
-            <color red="0.24705882352941178" green="0.59215686274509804" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.24699999392032623" green="0.59200000762939453" blue="0.77300000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

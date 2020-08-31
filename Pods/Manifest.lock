@@ -6,23 +6,27 @@ PODS:
     - GoogleMaps/Base
   - IBAnimatable (6.1.0)
   - IQKeyboardManager (6.5.6)
+  - Localization (1.0.2)
 
 DEPENDENCIES:
   - GoogleMaps
   - IBAnimatable
   - IQKeyboardManager
+  - Localization
 
 SPEC REPOS:
   trunk:
     - GoogleMaps
     - IBAnimatable
     - IQKeyboardManager
+    - Localization
 
 SPEC CHECKSUMS:
   GoogleMaps: 8c080862ff2748ece9929471b30feb56a6c5079d
   IBAnimatable: 99dddd4c0625884a301ba3ecbc1615f8a390368e
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+  Localization: d13a9844f5ebe66da4fade64a122ffeb0ffa547b
 
-PODFILE CHECKSUM: f493e9d5a2863ea8f377c16347d20ba4043e1511
+PODFILE CHECKSUM: 2b1e88be9f58c22b138071428e95d9da55a43e6d
 
 COCOAPODS: 1.9.3
