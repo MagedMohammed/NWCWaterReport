@@ -1,3 +1,28 @@
-PODFILE CHECKSUM: 6a53647fe5f6886f667de8423a98786a5786d4ed
+PODS:
+  - GoogleMaps (3.10.0):
+    - GoogleMaps/Maps (= 3.10.0)
+  - GoogleMaps/Base (3.10.0)
+  - GoogleMaps/Maps (3.10.0):
+    - GoogleMaps/Base
+  - IBAnimatable (6.1.0)
+  - IQKeyboardManager (6.5.6)
+
+DEPENDENCIES:
+  - GoogleMaps
+  - IBAnimatable
+  - IQKeyboardManager
+
+SPEC REPOS:
+  trunk:
+    - GoogleMaps
+    - IBAnimatable
+    - IQKeyboardManager
+
+SPEC CHECKSUMS:
+  GoogleMaps: 8c080862ff2748ece9929471b30feb56a6c5079d
+  IBAnimatable: 99dddd4c0625884a301ba3ecbc1615f8a390368e
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+
+PODFILE CHECKSUM: f493e9d5a2863ea8f377c16347d20ba4043e1511
 
 COCOAPODS: 1.9.3
