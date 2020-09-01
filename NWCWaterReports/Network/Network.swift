@@ -10,7 +10,23 @@ import Foundation
 import RTWebService
 import AEXML
 
-
+/*
+ mobileNumber:0557686624
+ token: AE180A91AB15DA07E053B978420A89D0
+ complaintType:CM_LKGE
+ cbu: TCBU
+ deviceId: 2707dac77f7f131a
+ osVersion: Android29 (10)
+ appVersion:3.4.0
+ comments:Testing
+ xy:
+ latlng:(21.268432487549934, 40.42749166377135)
+ coordinatesSource: S
+ image1:null
+ image2:null
+ image3:null
+ image4:null
+ */
 
 class NetworkRequest{
     // Create XML Document

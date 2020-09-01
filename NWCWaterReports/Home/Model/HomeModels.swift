@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 struct Complaints{
+    var id:String
     var title:String
+    var selectedImage:String
     var image:String
     var isSelected = false
 }
@@ -20,4 +22,22 @@ struct ComplaintsFormData{
     var complaintsType = String()
     var descrption = String()
     var location = String()
+    var mobileNumber = String()
+    var token = String()
+    var cbu = String()
+    var deviceId = UIDevice.current.identifierForVendor?.uuidString
+
+    var osVersion = UIDevice.current.systemVersion
+    var appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    var comments = String()
+    var xy = String()
+    var coordinatesSource = "S"
+    var latlng = String()
+    var image1 = String()
+    var image2 = String()
+    var image3 = String()
+    var image4 = String()
+
+    
+    
 }
