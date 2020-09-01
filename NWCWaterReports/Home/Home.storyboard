@@ -53,18 +53,18 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Z4b-gH-jCY">
                                                 <rect key="frame" x="0.0" y="230" width="414" height="60"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRM-tf-3RX">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRM-tf-3RX">
                                                         <rect key="frame" x="0.0" y="0.0" width="138" height="60"/>
                                                         <color key="backgroundColor" name="GrayColor"/>
-                                                        <state key="normal" title="Image"/>
+                                                        <state key="normal" image="gallery-icon"/>
                                                         <connections>
                                                             <action selector="addImageFromPhoneAction:" destination="414-RD-AK7" eventType="touchUpInside" id="zmG-GD-Y8P"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rd1-Ay-Bud" customClass="AnimatableButton" customModule="IBAnimatable">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rd1-Ay-Bud" customClass="AnimatableButton" customModule="IBAnimatable">
                                                         <rect key="frame" x="138" y="0.0" width="138" height="60"/>
                                                         <color key="backgroundColor" name="GrayColor"/>
-                                                        <state key="normal" title="Camira"/>
+                                                        <state key="normal" image="camera-icon"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                 <real key="value" value="2"/>
@@ -78,13 +78,13 @@
                                                             <action selector="addImageFromCameraAction:" destination="414-RD-AK7" eventType="touchUpInside" id="eAx-C6-bKE"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVn-X1-fEO">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVn-X1-fEO">
                                                         <rect key="frame" x="276" y="0.0" width="138" height="60"/>
                                                         <color key="backgroundColor" name="GrayColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="8Ot-uw-7GI"/>
                                                         </constraints>
-                                                        <state key="normal" title="getLocation"/>
+                                                        <state key="normal" image="location-icon"/>
                                                         <connections>
                                                             <action selector="getLocationAction:" destination="414-RD-AK7" eventType="touchUpInside" id="5VN-nc-OjA"/>
                                                         </connections>
@@ -97,7 +97,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="128" id="k1h-PG-yr2"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="NuB-yy-ksJ">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="NuB-yy-ksJ">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -375,7 +375,10 @@
     </scenes>
     <resources>
         <image name="a.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="camera-icon" width="64" height="50"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="gallery-icon" width="59" height="49"/>
+        <image name="location-icon" width="51" height="51"/>
         <image name="text.justify" catalog="system" width="128" height="100"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="GrayColor">

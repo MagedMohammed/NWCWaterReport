@@ -40,6 +40,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             reportTypeLabel.text = "report_type".localized()
         }
     }
+    
     @IBOutlet weak var getImageBu: UIButton!
     @IBOutlet weak var getImageFromCamiraBu: AnimatableButton!
     @IBOutlet weak var getLocationBu: UIButton!
@@ -61,11 +62,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     var currentLoc: CLLocation!
     var complaintsList = [Complaints]()
     var formData = ComplaintsFormData()
+    
     //    MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setColorOfNav()
-        imageInNavBar()
         NetworkRequest.request()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "hamburger"), style: .done, target: self, action: #selector(didTapMenu))
         let lati = CLLocationDegrees(exactly: 24.774265) ??  CLLocationDegrees()
@@ -76,13 +76,21 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         self.problemCollectionView.delegate = self
         self.problemCollectionView.dataSource = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setColorOfNav()
+        imageInNavBar()
+    }
+    
+    
     //    MARK:- Method
     func setDataForComplaints(){
         self.complaintsList = [
-            Complaints(title: "water_misuse".localized(), image: "04c"),
-            Complaints(title: "sewage_overflow".localized(), image: "03c"),
-            Complaints(title: "leak_meter".localized(), image: "02c"),
-            Complaints(title: "water_leakage".localized(), image: "01c")
+            Complaints(id: "CM_WVIO",title: "water_misuse".localized(), selectedImage:"04c", image: "04o"),
+            Complaints(id: "CM_SEVI",title: "sewage_overflow".localized(), selectedImage: "03c", image: "03o"),
+            Complaints(id: "CM_LKGE_M",title: "leak_meter".localized(), selectedImage: "02c", image: "02o"),
+            Complaints(id: "CM_LKGE",title: "water_leakage".localized(), selectedImage: "01c", image: "01o")
         ]
     }
     
@@ -95,6 +103,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
     }
+    
     @objc func didTapMenu(){
         let storyboard = UIStoryboard(name: "sideMenu", bundle: nil)
         let menu = storyboard.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuNavigationController
@@ -174,8 +183,9 @@ extension HomeViewController: UICollectionViewDelegate,  UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:ComplaintsCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ComplaintsCollectionViewCell", for: indexPath) as! ComplaintsCollectionViewCell
         let title = self.complaintsList[indexPath.row].title
-        let image = self.complaintsList[indexPath.row].image
         let isSelected = self.complaintsList[indexPath.row].isSelected
+        let image = isSelected ? self.complaintsList[indexPath.row].selectedImage : self.complaintsList[indexPath.row].image
+        
         cell.setCell(image: image, title: title, isSelected: isSelected)
         return cell
     }
@@ -183,8 +193,15 @@ extension HomeViewController: UICollectionViewDelegate,  UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100 , height: 110)
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.setDataForComplaints()
+        self.complaintsList[indexPath.row].isSelected = true
+        self.formData.complaintsType = self.complaintsList[indexPath.row].id
+        collectionView.reloadData()
+    }
 }
+
+// Image Picker
 extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

@@ -113,7 +113,6 @@
 				28A2A69124FE2FB900B68F05 /* PersonalDetailsViewController.swift */,
 				28A2A69224FE2FB900B68F05 /* SideMenuViewController.swift */,
 				28A2A64924FBE6F300B68F05 /* AppDelegate.swift */,
-				28A2A65D24FBE72E00B68F05 /* Home.storyboard */,
 				28A2A69724FE300800B68F05 /* sideMenu.storyboard */,
 				28A2A65224FBE6F400B68F05 /* Assets.xcassets */,
 				28A2A69524FE2FF600B68F05 /* Main.storyboard */,
@@ -157,6 +156,7 @@
 			children = (
 				28A2A68B24FD162700B68F05 /* Model */,
 				28A2A67C24FCCE1800B68F05 /* Cell */,
+				28A2A65D24FBE72E00B68F05 /* Home.storyboard */,
 				28A2A67A24FBEDB000B68F05 /* HomeViewController.swift */,
 			);
 			path = Home;
