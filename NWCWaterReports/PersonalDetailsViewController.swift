@@ -11,9 +11,35 @@ import UIKit
 class PersonalDetailsViewController: UIViewController {
 
     //MARK: IBOutlets
-    @IBOutlet weak var nameTF: UITextField!
-    @IBOutlet weak var mobileTF: UITextField!
-    @IBOutlet weak var emailTF: UITextField!
+    @IBOutlet weak var personalInfoLabel: UILabel! {
+        didSet {
+            personalInfoLabel.text = "personal_information".localized()
+        }
+    }
+    @IBOutlet weak var nameTF: UITextField! {
+        didSet {
+            nameTF.placeholder = "name".localized()
+             nameTF.textAlignment = languageCode == "en" ? .left : .right
+        }
+    }
+    @IBOutlet weak var mobileTF: UITextField! {
+        didSet {
+           mobileTF.placeholder = "05xxxxxxxx"
+             mobileTF.textAlignment = languageCode == "en" ? .left : .right
+        }
+    }
+    @IBOutlet weak var emailTF: UITextField!{
+         didSet {
+            emailTF.placeholder = "email".localized()
+            emailTF.textAlignment = languageCode == "en" ? .left : .right
+            
+        }
+    }
+    @IBOutlet weak var registerBtn: UIButton!{
+        didSet {
+            registerBtn.setTitle("register".localized(), for: .normal)
+        }
+    }
     
     //MARK: lifeCycle Methods
     override func viewDidLoad() {
@@ -21,10 +47,18 @@ class PersonalDetailsViewController: UIViewController {
       customizeNavigationBar()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        if languageCode == "en" {
+            view.semanticContentAttribute = .forceRightToLeft
+        } else {
+             view.semanticContentAttribute = .forceLeftToRight
+        }
+    }
+    
     //MARK: Methods
     func customizeNavigationBar() {
       if let navController = navigationController {
-            title = "بلاغات المياه"
+        title = "water_reports".localized()
             navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "back sign"), style: .done, target: self, action: #selector(backBtnPressed))
             
            navController.navigationBar.barTintColor =  #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)

@@ -64,7 +64,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     //    MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setColorOfNav()
+       
         imageInNavBar()
         NetworkRequest.request()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "hamburger"), style: .done, target: self, action: #selector(didTapMenu))
@@ -75,6 +75,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         setDataForComplaints()
         self.problemCollectionView.delegate = self
         self.problemCollectionView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+      setColorOfNav()
     }
     //    MARK:- Method
     func setDataForComplaints(){
@@ -98,12 +102,17 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @objc func didTapMenu(){
         let storyboard = UIStoryboard(name: "sideMenu", bundle: nil)
         let menu = storyboard.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuNavigationController
+        if languageCode == "en" {
+            menu.leftSide = true
+        } else {
+            menu.leftSide = false
+        }
         DispatchQueue.main.async {
             self.present(menu, animated: true, completion: nil)
         }
     }
     func setMap(location:CLLocation,zoom:Float){
-        
+
         let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: zoom)
         let mapView = GMSMapView.map(withFrame: self.mapView.frame, camera: camera)
         self.mapView.addSubview(mapView)

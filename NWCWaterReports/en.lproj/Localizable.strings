@@ -19,3 +19,13 @@
 "ok" = "OK";
 
 "You don't have permission to access gallery." = "You don't have permission to access gallery.";
+
+"home" = "Home";
+"personal_information" = "Personal Information";
+"NWC" = "NWC";
+"eBranch" = "ebranch";
+
+"water_reports" = "Water Reports";
+"name" = "Name";
+"email" = "Email";
+"register" = "Register";
