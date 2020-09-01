@@ -12,6 +12,7 @@ PODS:
   - RTWebService (0.2.4):
     - AEXML (~> 4.0)
     - Alamofire (~> 4.3)
+  - SideMenu (6.4.9)
 
 DEPENDENCIES:
   - GoogleMaps
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - IQKeyboardManager
   - Localization
   - RTWebService
+  - SideMenu
 
 SPEC REPOS:
   trunk:
@@ -29,6 +31,7 @@ SPEC REPOS:
     - IQKeyboardManager
     - Localization
     - RTWebService
+    - SideMenu
 
 SPEC CHECKSUMS:
   AEXML: 0e8f1d874fa033ca6b3909452a8bc362faad46e6
@@ -38,7 +41,8 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Localization: d13a9844f5ebe66da4fade64a122ffeb0ffa547b
   RTWebService: 3b43542f2cf7e34c21dbd9d9d9d1b693159e3ff7
+  SideMenu: 8ef57a3cfc024a2d3fc1c036c7fe98537baec9e0
 
-PODFILE CHECKSUM: 07477d9242c486f2efc58455f259f86103ef02c6
+PODFILE CHECKSUM: f6afc43a60224be38b02adeee87f920c5b4936d9
 
 COCOAPODS: 1.9.3

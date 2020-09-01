@@ -13,5 +13,6 @@ target 'NWCWaterReports' do
   pod 'IQKeyboardManager' #iOS8 and later
   pod 'Localization'
   pod "RTWebService"
+  pod 'SideMenu'
 
 end
