@@ -65,6 +65,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         setColorOfNav()
         imageInNavBar()
+        NetworkRequest.request()
         let lati = CLLocationDegrees(exactly: 24.774265) ??  CLLocationDegrees()
         let longi = CLLocationDegrees(exactly: 46.738586) ??  CLLocationDegrees()
         let location = CLLocation(latitude: lati, longitude: longi)

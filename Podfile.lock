@@ -1,4 +1,6 @@
 PODS:
+  - AEXML (4.5.0)
+  - Alamofire (4.9.1)
   - GoogleMaps (3.10.0):
     - GoogleMaps/Maps (= 3.10.0)
   - GoogleMaps/Base (3.10.0)
@@ -7,26 +9,36 @@ PODS:
   - IBAnimatable (6.1.0)
   - IQKeyboardManager (6.5.6)
   - Localization (1.0.2)
+  - RTWebService (0.2.4):
+    - AEXML (~> 4.0)
+    - Alamofire (~> 4.3)
 
 DEPENDENCIES:
   - GoogleMaps
   - IBAnimatable
   - IQKeyboardManager
   - Localization
+  - RTWebService
 
 SPEC REPOS:
   trunk:
+    - AEXML
+    - Alamofire
     - GoogleMaps
     - IBAnimatable
     - IQKeyboardManager
     - Localization
+    - RTWebService
 
 SPEC CHECKSUMS:
+  AEXML: 0e8f1d874fa033ca6b3909452a8bc362faad46e6
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   GoogleMaps: 8c080862ff2748ece9929471b30feb56a6c5079d
   IBAnimatable: 99dddd4c0625884a301ba3ecbc1615f8a390368e
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Localization: d13a9844f5ebe66da4fade64a122ffeb0ffa547b
+  RTWebService: 3b43542f2cf7e34c21dbd9d9d9d1b693159e3ff7
 
-PODFILE CHECKSUM: 2b1e88be9f58c22b138071428e95d9da55a43e6d
+PODFILE CHECKSUM: 07477d9242c486f2efc58455f259f86103ef02c6
 
 COCOAPODS: 1.9.3

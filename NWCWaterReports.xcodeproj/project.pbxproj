@@ -32,6 +32,7 @@
 		28A2A68824FD04A200B68F05 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2A68724FD04A200B68F05 /* Constants.swift */; };
 		28A2A68A24FD05D700B68F05 /* navgationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2A68924FD05D700B68F05 /* navgationBar.swift */; };
 		28A2A68D24FD163500B68F05 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2A68C24FD163500B68F05 /* HomeModels.swift */; };
+		28A2A69024FD29DE00B68F05 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2A68F24FD29DE00B68F05 /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		28A2A68724FD04A200B68F05 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		28A2A68924FD05D700B68F05 /* navgationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = navgationBar.swift; sourceTree = "<group>"; };
 		28A2A68C24FD163500B68F05 /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
+		28A2A68F24FD29DE00B68F05 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		3E7400FD322A33DAB03EB1A0 /* Pods_NWCWaterReports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NWCWaterReports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ADAB6D691EA8E72969FF879 /* Pods-NWCWaterReports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NWCWaterReports.release.xcconfig"; path = "Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports.release.xcconfig"; sourceTree = "<group>"; };
 		BA756735BBFF522F0DAE4ADF /* Pods-NWCWaterReports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NWCWaterReports.debug.xcconfig"; path = "Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		28A2A64824FBE6F300B68F05 /* NWCWaterReports */ = {
 			isa = PBXGroup;
 			children = (
+				28A2A68E24FD299B00B68F05 /* Network */,
 				28A2A67924FBED8200B68F05 /* Home */,
 				28A2A65F24FBE92000B68F05 /* Resource */,
 				28A2A64924FBE6F300B68F05 /* AppDelegate.swift */,
@@ -167,6 +170,14 @@
 				28A2A68C24FD163500B68F05 /* HomeModels.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		28A2A68E24FD299B00B68F05 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				28A2A68F24FD29DE00B68F05 /* Network.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		52B5B4B8EF18EDC360219AE4 /* Frameworks */ = {
@@ -336,6 +347,7 @@
 			files = (
 				28A2A68824FD04A200B68F05 /* Constants.swift in Sources */,
 				28A2A64E24FBE6F300B68F05 /* ViewController.swift in Sources */,
+				28A2A69024FD29DE00B68F05 /* Network.swift in Sources */,
 				28A2A64A24FBE6F300B68F05 /* AppDelegate.swift in Sources */,
 				28A2A68A24FD05D700B68F05 /* navgationBar.swift in Sources */,
 				28A2A67E24FCCE5100B68F05 /* ComplaintsCollectionViewCell.swift in Sources */,
