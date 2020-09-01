@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Personal Details View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NWCWaterReports" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PersonalDetailsVC" id="BYZ-38-t0r" customClass="PersonalDetailsViewController" customModule="NWCWaterReports" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,6 +76,12 @@
                                     <action selector="submitBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zTW-Bb-1nn"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer-bg-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ayn-0a-63E">
+                                <rect key="frame" x="0.0" y="637" width="375" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Pvx-JI-zFK"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -85,12 +91,15 @@
                             <constraint firstItem="j1k-Yf-nqt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="N45-n9-fph"/>
                             <constraint firstItem="NtL-SS-qxJ" firstAttribute="top" secondItem="j1k-Yf-nqt" secondAttribute="bottom" constant="35" id="OcN-bf-mkK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="g76-u5-Mzx" secondAttribute="trailing" constant="20" id="Pwz-H2-wIL"/>
+                            <constraint firstItem="Ayn-0a-63E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RnC-z4-jIE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ayn-0a-63E" secondAttribute="bottom" id="TLI-KS-4aF"/>
                             <constraint firstItem="tvU-xc-D3e" firstAttribute="centerY" secondItem="NtL-SS-qxJ" secondAttribute="centerY" id="Xc1-Ii-IeP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NtL-SS-qxJ" secondAttribute="trailing" constant="20" id="dEG-ty-IHu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j1k-Yf-nqt" secondAttribute="trailing" constant="30" id="eyv-oY-vHF"/>
                             <constraint firstItem="tvU-xc-D3e" firstAttribute="height" secondItem="NtL-SS-qxJ" secondAttribute="height" id="gJI-aD-apL"/>
                             <constraint firstItem="j1k-Yf-nqt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="ldO-Xz-TRE"/>
                             <constraint firstItem="g76-u5-Mzx" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.05" id="mB1-mJ-a4E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ayn-0a-63E" secondAttribute="trailing" id="rFi-CN-e0D"/>
                             <constraint firstItem="NtL-SS-qxJ" firstAttribute="leading" secondItem="tvU-xc-D3e" secondAttribute="trailing" constant="8" id="ty6-cA-6E6"/>
                             <constraint firstItem="NtL-SS-qxJ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="uJ4-QK-jSa"/>
                         </constraints>
@@ -127,6 +136,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="footer-bg-1" width="360" height="30"/>
         <image name="person" width="225" height="225"/>
         <image name="phone" width="22" height="34"/>
     </resources>

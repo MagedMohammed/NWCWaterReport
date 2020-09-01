@@ -10,7 +10,11 @@ import UIKit
 import IBAnimatable
 import CoreLocation
 import GoogleMaps
+<<<<<<< HEAD
 import Localization
+=======
+import SideMenu
+>>>>>>> 85d5ebfc3bc4a54cf27c0743672003725d2f655f
 
 
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
@@ -58,6 +62,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     //    MARK:- Properties
     var locationManager = CLLocationManager()
     var currentLoc: CLLocation!
+<<<<<<< HEAD
     var complaintsList = [Complaints]()
     var formData = ComplaintsFormData()
     //    MARK:- ViewLifeCycle
@@ -73,6 +78,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         setDataForComplaints()
         self.problemCollectionView.delegate = self
         self.problemCollectionView.dataSource = self
+=======
+    
+    //    MARK:- ViewLifeCycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getLocation()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "hamburger"), style: .done, target: self, action: #selector(didTapMenu))
+>>>>>>> 85d5ebfc3bc4a54cf27c0743672003725d2f655f
     }
     //    MARK:- Method
     func setDataForComplaints(){
@@ -94,9 +107,25 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+<<<<<<< HEAD
     func setMap(location:CLLocation,zoom:Float){
         
         let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: zoom)
+=======
+    @objc func didTapMenu(){
+        let storyboard = UIStoryboard(name: "sideMenu", bundle: nil)
+               let menu = storyboard.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuNavigationController
+               DispatchQueue.main.async {
+                   self.present(menu, animated: true, completion: nil)
+               }
+    }
+    
+    func setMap(location:CLLocation){
+        // Do any additional setup after loading the view.
+        // Create a GMSCameraPosition that tells the map to display the
+        // coordinate -33.86,151.20 at zoom level 6.
+        let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 12) //GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
+>>>>>>> 85d5ebfc3bc4a54cf27c0743672003725d2f655f
         let mapView = GMSMapView.map(withFrame: self.mapView.frame, camera: camera)
         self.mapView.addSubview(mapView)
         let marker = GMSMarker()
