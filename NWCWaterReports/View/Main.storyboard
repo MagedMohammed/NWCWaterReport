@@ -30,7 +30,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="GVp-3I-Cdg">
                                         <rect key="frame" x="0.0" y="40" width="44" height="20"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OPZ-nh-Np1">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addressAt" translatesAutoresizingMaskIntoConstraints="NO" id="OPZ-nh-Np1">
                                         <rect key="frame" x="0.0" y="80" width="44" height="20"/>
                                     </imageView>
                                 </subviews>
@@ -110,6 +110,8 @@
                         <outlet property="emailTF" destination="kFn-sV-luj" id="SSA-Y5-zLf"/>
                         <outlet property="mobileTF" destination="ZTX-Rv-scN" id="1Va-ri-VQA"/>
                         <outlet property="nameTF" destination="yg4-yE-soQ" id="QXu-k5-JdQ"/>
+                        <outlet property="personalInfoLabel" destination="j1k-Yf-nqt" id="Y8b-8y-URg"/>
+                        <outlet property="registerBtn" destination="g76-u5-Mzx" id="QUp-Ju-O1m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -136,6 +138,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addressAt" width="64" height="64"/>
         <image name="footer-bg-1" width="360" height="30"/>
         <image name="person" width="225" height="225"/>
         <image name="phone" width="22" height="34"/>

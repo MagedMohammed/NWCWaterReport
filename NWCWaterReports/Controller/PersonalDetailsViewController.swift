@@ -75,4 +75,3 @@ class PersonalDetailsViewController: UIViewController {
     @IBAction func submitBtnAction(_ sender: UIButton) {
     }
 }
-

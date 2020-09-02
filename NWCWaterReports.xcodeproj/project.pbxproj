@@ -107,16 +107,14 @@
 		28A2A64824FBE6F300B68F05 /* NWCWaterReports */ = {
 			isa = PBXGroup;
 			children = (
-				28A2A68E24FD299B00B68F05 /* Network */,
-				28A2A67924FBED8200B68F05 /* Home */,
 				28A2A65F24FBE92000B68F05 /* Resource */,
-				28A2A69124FE2FB900B68F05 /* PersonalDetailsViewController.swift */,
-				28A2A69224FE2FB900B68F05 /* SideMenuViewController.swift */,
+				28A2A68E24FD299B00B68F05 /* Network */,
+				3CE8D82224FFA489003844A2 /* Model */,
+				28A2A67924FBED8200B68F05 /* View */,
+				3CE8D82324FFA4B8003844A2 /* Controller */,
 				28A2A64924FBE6F300B68F05 /* AppDelegate.swift */,
-				28A2A69724FE300800B68F05 /* sideMenu.storyboard */,
-				28A2A65224FBE6F400B68F05 /* Assets.xcassets */,
-				28A2A69524FE2FF600B68F05 /* Main.storyboard */,
 				28A2A65424FBE6F400B68F05 /* LaunchScreen.storyboard */,
+				28A2A65224FBE6F400B68F05 /* Assets.xcassets */,
 				28A2A65724FBE6F400B68F05 /* Info.plist */,
 				28A2A66024FBE93600B68F05 /* Colors.xcassets */,
 				28A2A68524FCF62700B68F05 /* Localizable.strings */,
@@ -151,31 +149,23 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		28A2A67924FBED8200B68F05 /* Home */ = {
+		28A2A67924FBED8200B68F05 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				28A2A68B24FD162700B68F05 /* Model */,
-				28A2A67C24FCCE1800B68F05 /* Cell */,
+				28A2A67C24FCCE1800B68F05 /* Complaint */,
 				28A2A65D24FBE72E00B68F05 /* Home.storyboard */,
-				28A2A67A24FBEDB000B68F05 /* HomeViewController.swift */,
+				28A2A69724FE300800B68F05 /* sideMenu.storyboard */,
+				28A2A69524FE2FF600B68F05 /* Main.storyboard */,
 			);
-			path = Home;
+			path = View;
 			sourceTree = "<group>";
 		};
-		28A2A67C24FCCE1800B68F05 /* Cell */ = {
+		28A2A67C24FCCE1800B68F05 /* Complaint */ = {
 			isa = PBXGroup;
 			children = (
 				28A2A67D24FCCE5100B68F05 /* ComplaintsCollectionViewCell.swift */,
 			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		28A2A68B24FD162700B68F05 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				28A2A68C24FD163500B68F05 /* HomeModels.swift */,
-			);
-			path = Model;
+			path = Complaint;
 			sourceTree = "<group>";
 		};
 		28A2A68E24FD299B00B68F05 /* Network */ = {
@@ -184,6 +174,24 @@
 				28A2A68F24FD29DE00B68F05 /* Network.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		3CE8D82224FFA489003844A2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28A2A68C24FD163500B68F05 /* HomeModels.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3CE8D82324FFA4B8003844A2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				28A2A69124FE2FB900B68F05 /* PersonalDetailsViewController.swift */,
+				28A2A69224FE2FB900B68F05 /* SideMenuViewController.swift */,
+				28A2A67A24FBEDB000B68F05 /* HomeViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		52B5B4B8EF18EDC360219AE4 /* Frameworks */ = {
@@ -215,7 +223,7 @@
 				28A2A64324FBE6F300B68F05 /* Frameworks */,
 				28A2A64424FBE6F300B68F05 /* Resources */,
 				CA55DBE13F8F1CB87B932B36 /* [CP] Embed Pods Frameworks */,
-				E4DAE2801BE233FB4A934F39 /* [CP] Copy Pods Resources */,
+				2A0D2E56CE63EF2466E10ACC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -289,6 +297,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2A0D2E56CE63EF2466E10ACC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6183C7FEBFB1BE40427825EB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -326,23 +351,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E4DAE2801BE233FB4A934F39 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

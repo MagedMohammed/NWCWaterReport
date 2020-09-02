@@ -28,14 +28,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="T0d-yq-gzS">
-                                                    <rect key="frame" x="72" y="-9.5" width="332" height="62.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="T0d-yq-gzS">
+                                                    <rect key="frame" x="77" y="-9.5" width="327" height="62.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dax-NS-xbC">
-                                                    <rect key="frame" x="0.0" y="-9.5" width="62" height="62.5"/>
+                                                    <rect key="frame" x="5" y="-9.5" width="62" height="62.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="dax-NS-xbC" secondAttribute="height" id="eJO-Pt-4S1"/>
                                                     </constraints>
@@ -46,7 +46,7 @@
                                                 <constraint firstItem="dax-NS-xbC" firstAttribute="width" secondItem="WOP-Ap-HFA" secondAttribute="width" multiplier="0.15" id="682-9Y-ggA"/>
                                                 <constraint firstItem="T0d-yq-gzS" firstAttribute="height" secondItem="dax-NS-xbC" secondAttribute="height" id="XxE-x3-Hrf"/>
                                                 <constraint firstItem="T0d-yq-gzS" firstAttribute="centerY" secondItem="dax-NS-xbC" secondAttribute="centerY" id="YLT-7s-Iph"/>
-                                                <constraint firstItem="dax-NS-xbC" firstAttribute="leading" secondItem="WOP-Ap-HFA" secondAttribute="leading" id="fpa-L2-08x"/>
+                                                <constraint firstItem="dax-NS-xbC" firstAttribute="leading" secondItem="WOP-Ap-HFA" secondAttribute="leading" constant="5" id="fpa-L2-08x"/>
                                                 <constraint firstAttribute="trailing" secondItem="T0d-yq-gzS" secondAttribute="trailing" constant="10" id="hqu-CL-GZq"/>
                                                 <constraint firstItem="T0d-yq-gzS" firstAttribute="leading" secondItem="dax-NS-xbC" secondAttribute="trailing" constant="10" id="qDq-AU-GS0"/>
                                             </constraints>
