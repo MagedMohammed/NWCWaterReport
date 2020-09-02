@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="foh-RS-HOm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="foh-RS-HOm">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -372,15 +372,107 @@
             </objects>
             <point key="canvasLocation" x="-91.304347826086968" y="63.616071428571423"/>
         </scene>
+        <!--Reports View Controller-->
+        <scene sceneID="y5C-WE-0cK">
+            <objects>
+                <viewController id="yLS-sJ-eCm" customClass="ReportsViewController" customModule="NWCWaterReports" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LLk-S8-q2Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZdZ-bG-Vkx" customClass="AnimatableView" customModule="IBAnimatable">
+                                <rect key="frame" x="20" y="158" width="374" height="66"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reports" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNL-6x-21c">
+                                        <rect key="frame" x="20" y="8" width="334" height="50"/>
+                                        <color key="backgroundColor" name="PrimaryColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="T21-mW-HwJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_cornerSides" value="topLeft, topRight"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="PrimaryColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="WNL-6x-21c" secondAttribute="bottom" constant="8" id="F7v-LC-FJI"/>
+                                    <constraint firstItem="WNL-6x-21c" firstAttribute="leading" secondItem="ZdZ-bG-Vkx" secondAttribute="leading" constant="20" id="Rlk-DS-h0J"/>
+                                    <constraint firstAttribute="trailing" secondItem="WNL-6x-21c" secondAttribute="trailing" constant="20" id="XCD-Ws-fbq"/>
+                                    <constraint firstItem="WNL-6x-21c" firstAttribute="top" secondItem="ZdZ-bG-Vkx" secondAttribute="top" constant="8" id="lUC-jk-doD"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_cornerSides" value="topRight, topLeft"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a2u-Jy-6ic">
+                                <rect key="frame" x="20" y="224" width="374" height="630"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="Pdv-sU-Ha4">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </view>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lZR-di-qOI" firstAttribute="bottom" secondItem="a2u-Jy-6ic" secondAttribute="bottom" constant="8" id="5z5-oo-Cro"/>
+                            <constraint firstItem="ZdZ-bG-Vkx" firstAttribute="top" secondItem="lZR-di-qOI" secondAttribute="top" constant="70" id="8iq-E9-ugG"/>
+                            <constraint firstItem="ZdZ-bG-Vkx" firstAttribute="leading" secondItem="lZR-di-qOI" secondAttribute="leading" constant="20" id="Cd9-hw-Xhu"/>
+                            <constraint firstItem="a2u-Jy-6ic" firstAttribute="leading" secondItem="lZR-di-qOI" secondAttribute="leading" constant="20" id="caZ-SM-43Q"/>
+                            <constraint firstItem="lZR-di-qOI" firstAttribute="trailing" secondItem="a2u-Jy-6ic" secondAttribute="trailing" constant="20" id="fAK-B1-ebd"/>
+                            <constraint firstItem="lZR-di-qOI" firstAttribute="trailing" secondItem="ZdZ-bG-Vkx" secondAttribute="trailing" constant="20" id="wHB-84-yNf"/>
+                            <constraint firstItem="a2u-Jy-6ic" firstAttribute="top" secondItem="ZdZ-bG-Vkx" secondAttribute="bottom" id="yBk-J0-0FK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lZR-di-qOI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="t53-ac-fc4"/>
+                    <connections>
+                        <outlet property="reportsTableView" destination="a2u-Jy-6ic" id="Zeb-Ja-qy9"/>
+                        <outlet property="titleLabel" destination="WNL-6x-21c" id="hrn-YA-HKI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZD4-P9-YBg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2339.130434782609" y="63.616071428571423"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kZ1-Ia-jU8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jSA-C6-EnV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IwR-aS-Rjs">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yLS-sJ-eCm" kind="relationship" relationship="rootViewController" id="q9a-6X-F0D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jUn-0I-0P6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1428.985507246377" y="63.616071428571423"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="a.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="a.circle.fill" catalog="system" width="128" height="121"/>
         <image name="camera-icon" width="64" height="50"/>
-        <image name="checkmark" catalog="system" width="64" height="56"/>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="gallery-icon" width="59" height="49"/>
         <image name="location-icon" width="51" height="51"/>
-        <image name="text.justify" catalog="system" width="64" height="50"/>
-        <image name="xmark" catalog="system" width="64" height="56"/>
+        <image name="text.justify" catalog="system" width="128" height="100"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="GrayColor">
             <color red="0.90200001001358032" green="0.90200001001358032" blue="0.90200001001358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

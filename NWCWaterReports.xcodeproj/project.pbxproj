@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		285D205F37555DC0CC2D0533 /* Pods_NWCWaterReports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E7400FD322A33DAB03EB1A0 /* Pods_NWCWaterReports.framework */; };
+		288D2BB324FFDA1800A11E0A /* ReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288D2BB224FFDA1800A11E0A /* ReportsViewController.swift */; };
 		28A2A64A24FBE6F300B68F05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2A64924FBE6F300B68F05 /* AppDelegate.swift */; };
 		28A2A65324FBE6F400B68F05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A65224FBE6F400B68F05 /* Assets.xcassets */; };
 		28A2A65624FBE6F400B68F05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A65424FBE6F400B68F05 /* LaunchScreen.storyboard */; };
@@ -35,9 +36,12 @@
 		28A2A69424FE2FB900B68F05 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2A69224FE2FB900B68F05 /* SideMenuViewController.swift */; };
 		28A2A69624FE2FF700B68F05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A69524FE2FF600B68F05 /* Main.storyboard */; };
 		28A2A69824FE300800B68F05 /* sideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A69724FE300800B68F05 /* sideMenu.storyboard */; };
+		28A2A69C24FFAD9200B68F05 /* ReportsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2A69A24FFAD9200B68F05 /* ReportsTableViewCell.swift */; };
+		28A2A69D24FFAD9200B68F05 /* ReportsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A69B24FFAD9200B68F05 /* ReportsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		288D2BB224FFDA1800A11E0A /* ReportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsViewController.swift; sourceTree = "<group>"; };
 		28A2A64624FBE6F300B68F05 /* NWCWaterReports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NWCWaterReports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28A2A64924FBE6F300B68F05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28A2A65224FBE6F400B68F05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 		28A2A69224FE2FB900B68F05 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		28A2A69524FE2FF600B68F05 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		28A2A69724FE300800B68F05 /* sideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = sideMenu.storyboard; sourceTree = "<group>"; };
+		28A2A69A24FFAD9200B68F05 /* ReportsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsTableViewCell.swift; sourceTree = "<group>"; };
+		28A2A69B24FFAD9200B68F05 /* ReportsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportsTableViewCell.xib; sourceTree = "<group>"; };
 		3E7400FD322A33DAB03EB1A0 /* Pods_NWCWaterReports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NWCWaterReports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ADAB6D691EA8E72969FF879 /* Pods-NWCWaterReports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NWCWaterReports.release.xcconfig"; path = "Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports.release.xcconfig"; sourceTree = "<group>"; };
 		BA756735BBFF522F0DAE4ADF /* Pods-NWCWaterReports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NWCWaterReports.debug.xcconfig"; path = "Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +162,7 @@
 				28A2A65D24FBE72E00B68F05 /* Home.storyboard */,
 				28A2A69724FE300800B68F05 /* sideMenu.storyboard */,
 				28A2A69524FE2FF600B68F05 /* Main.storyboard */,
+				28A2A69E24FFAD9D00B68F05 /* ReportsCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,6 +183,15 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		28A2A69E24FFAD9D00B68F05 /* ReportsCell */ = {
+			isa = PBXGroup;
+			children = (
+				28A2A69A24FFAD9200B68F05 /* ReportsTableViewCell.swift */,
+				28A2A69B24FFAD9200B68F05 /* ReportsTableViewCell.xib */,
+			);
+			path = ReportsCell;
+			sourceTree = "<group>";
+		};
 		3CE8D82224FFA489003844A2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +206,7 @@
 				28A2A69124FE2FB900B68F05 /* PersonalDetailsViewController.swift */,
 				28A2A69224FE2FB900B68F05 /* SideMenuViewController.swift */,
 				28A2A67A24FBEDB000B68F05 /* HomeViewController.swift */,
+				288D2BB224FFDA1800A11E0A /* ReportsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -276,6 +293,7 @@
 				28A2A68324FCF62700B68F05 /* Localizable.strings in Resources */,
 				28A2A67424FBEC9C00B68F05 /* gess-bold.ttf in Resources */,
 				28A2A66F24FBEC9B00B68F05 /* gess-med.otf in Resources */,
+				28A2A69D24FFAD9200B68F05 /* ReportsTableViewCell.xib in Resources */,
 				28A2A67224FBEC9B00B68F05 /* Myriad Pro Light.otf in Resources */,
 				28A2A66124FBE93600B68F05 /* Colors.xcassets in Resources */,
 				28A2A65624FBE6F400B68F05 /* LaunchScreen.storyboard in Resources */,
@@ -366,7 +384,9 @@
 				28A2A68A24FD05D700B68F05 /* navgationBar.swift in Sources */,
 				28A2A67E24FCCE5100B68F05 /* ComplaintsCollectionViewCell.swift in Sources */,
 				28A2A67B24FBEDB000B68F05 /* HomeViewController.swift in Sources */,
+				288D2BB324FFDA1800A11E0A /* ReportsViewController.swift in Sources */,
 				28A2A68D24FD163500B68F05 /* HomeModels.swift in Sources */,
+				28A2A69C24FFAD9200B68F05 /* ReportsTableViewCell.swift in Sources */,
 				28A2A69424FE2FB900B68F05 /* SideMenuViewController.swift in Sources */,
 				28A2A69324FE2FB900B68F05 /* PersonalDetailsViewController.swift in Sources */,
 			);

@@ -25,7 +25,6 @@ struct ComplaintsFormData{
     var token = String()
     var cbu = String()
     var deviceId = UIDevice.current.identifierForVendor?.uuidString
-
     var osVersion = UIDevice.current.systemVersion
     var appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     var comments = String()
