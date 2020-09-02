@@ -10,20 +10,20 @@ import UIKit
 
 class SideMenuViewController: UIViewController {
 
+    //MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
-    let source = [Item(icon: #imageLiteral(resourceName: "home-icon"), name: "home") , Item(icon: #imageLiteral(resourceName: "person"), name: "Personal Information") , Item(icon: #imageLiteral(resourceName: "nwclog1"), name: "NWC") ,Item(icon: #imageLiteral(resourceName: "ebranch-logo"), name: "eBranch") , Item(icon: #imageLiteral(resourceName: "phone-icon-1"), name: "930 00 1744")]
+    let source = [Item(icon: #imageLiteral(resourceName: "home-icon"), name: "home".localized()) , Item(icon: #imageLiteral(resourceName: "account-icon"), name: "personal_information".localized()) , Item(icon: #imageLiteral(resourceName: "nwclog1"), name: "NWC".localized()) ,Item(icon: #imageLiteral(resourceName: "ebranch-logo"), name: "eBranch".localized()) , Item(icon: #imageLiteral(resourceName: "phone-icon-1"), name: "930 00 1744")]
     
+    
+    //MARK: lifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableView.automaticDimension
+        tableView.tableFooterView = UIView()
     }
 
+     //MARK: Methods
      func openWebView(stringUrl :String){
         guard let url = URL(string: stringUrl) else {
           return
@@ -37,6 +37,7 @@ class SideMenuViewController: UIViewController {
       }
 }
 
+  //MARK: Extensions
 extension SideMenuViewController : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return source.count
@@ -44,6 +45,9 @@ extension SideMenuViewController : UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuTableViewCell") as! SideMenuTableViewCell
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = #colorLiteral(red: 0.1460938156, green: 0.3017449081, blue: 0.4727679491, alpha: 1)
+        cell.selectedBackgroundView = bgColorView
         cell.iconImageView.image = source[indexPath.row].icon
         cell.titleLabel.text  = source[indexPath.row].name
         return cell
@@ -58,15 +62,15 @@ extension SideMenuViewController : UITableViewDelegate , UITableViewDataSource {
               let PersonalDetailsVC = storyboard.instantiateViewController(withIdentifier: "PersonalDetailsVC") as! PersonalDetailsViewController
                  self.navigationController?.pushViewController(PersonalDetailsVC, animated: true)
         case 2 :
-           openWebView(stringUrl: "https://www.nwc.com.sa/")
+           openWebView(stringUrl: "https://www.nwc.com.sa")
         case 3:
-            openWebView(stringUrl: "www.e.com.sa")
+            openWebView(stringUrl: "https://e.nwc.com.sa")
         case 4 :
             if let url = NSURL(string: "tel://\(920001744)"), UIApplication.shared.canOpenURL(url as URL) {
                 UIApplication.shared.openURL(url as URL)
             }
         default:
-            print()
+            return
         }
     }
 }

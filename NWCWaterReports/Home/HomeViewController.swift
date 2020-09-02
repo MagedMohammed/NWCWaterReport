@@ -106,12 +106,17 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @objc func didTapMenu(){
         let storyboard = UIStoryboard(name: "sideMenu", bundle: nil)
         let menu = storyboard.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuNavigationController
+        if languageCode == "en" {
+            menu.leftSide = true
+        } else {
+            menu.leftSide = false
+        }
         DispatchQueue.main.async {
             self.present(menu, animated: true, completion: nil)
         }
     }
     func setMap(location:CLLocation,zoom:Float){
-        
+
         let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: zoom)
         let mapView = GMSMapView.map(withFrame: self.mapView.frame, camera: camera)
         self.mapView.addSubview(mapView)
