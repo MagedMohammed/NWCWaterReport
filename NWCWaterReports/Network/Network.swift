@@ -49,7 +49,7 @@ class NetworkRequest{
         let body = envelope.addChild(name: "soap:Body")
         let submitComplaints = body.addChild(name:"RequestOtp"/*this Service endpoint*/, attributes:["xmlns":"http://schemas.xmlsoap.org/soap/envelope/"])
         // This is parameters
-        submitComplaints.addChild(name: "mobileNumber", value: mobile, attributes: [:])
+        submitComplaints.addChild(name: "phonenumber", value: mobile, attributes: [:])
         // end of parameters
         
         let soapPayload = RTPayload(parameter: [ "soapdata" : soap.xml ], parameterEncoding: .defaultUrl)
