@@ -66,7 +66,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     //    MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetworkRequest.request()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "hamburger"), style: .done, target: self, action: #selector(didTapMenu))
         let lati = CLLocationDegrees(exactly: 24.774265) ??  CLLocationDegrees()
         let longi = CLLocationDegrees(exactly: 46.738586) ??  CLLocationDegrees()
@@ -125,6 +124,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         print("locations = \(locValue.latitude) \(locValue.longitude)")
+        self.formData.latlng = "(\(locValue.latitude), \(locValue.longitude))"
         setMap(location:manager.location!, zoom: 15)
     }
     //    MARK:- Action
@@ -156,9 +156,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     @IBAction func submitAction(_ sender: UIButton) {
+        self.formData.comments = self.problemTextView.text ?? ""
+        print(self.formData)
         
-        
-        
+        NetworkRequest.submitComplaints(parameter: self.formData)
     }
     
     @IBAction func cancelAction(_ sender: UIButton) {

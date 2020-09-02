@@ -20,12 +20,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-    <key>NSCameraUsageDescription</key>
-    <string>App needs to access to Camera while Add a This Idea</string>
-    <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>App needs to access Photo Library while Add a This Idea</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>App needs to access Photo Library while Add a This Idea</string>
+	<key>NSCameraUsageDescription</key>
+	<string>App needs to access to Camera while Add a This Idea</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>App needs to access Photo Library while Add a This Idea</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>App needs to access Photo Library while Add a This Idea</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -64,30 +64,10 @@
 		<string>gess-med.otf</string>
 		<string>gess-bold.ttf</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Application wants to use your location</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Application wants to use your location</string>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Home</string>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>armv7</string>
-	</array>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+    </dict>
 </dict>
 </plist>
