@@ -329,12 +329,12 @@
                         <viewLayoutGuide key="safeArea" id="U5w-4d-mbm"/>
                     </view>
                     <navigationItem key="navigationItem" id="PvI-h9-55B">
-                        <barButtonItem key="leftBarButtonItem" image="a.circle.fill" catalog="system" id="VAd-pi-XFZ">
+                        <barButtonItem key="leftBarButtonItem" image="text.justify" catalog="system" id="QEm-Mq-qgv"/>
+                        <barButtonItem key="rightBarButtonItem" image="a.circle.fill" catalog="system" id="VAd-pi-XFZ">
                             <connections>
                                 <action selector="languageAction:" destination="414-RD-AK7" id="RBT-Be-kN1"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="text.justify" catalog="system" id="QEm-Mq-qgv"/>
                     </navigationItem>
                     <connections>
                         <outlet property="cancelBu" destination="sHP-rj-wMd" id="Zfw-lE-aIG"/>

@@ -21,7 +21,6 @@ struct ComplaintsFormData{
     var image:[UIImage] = [UIImage]()
     var complaintsType = String()
     var descrption = String()
-    var location = String()
     var mobileNumber = String()
     var token = String()
     var cbu = String()
@@ -33,11 +32,8 @@ struct ComplaintsFormData{
     var xy = String()
     var coordinatesSource = "S"
     var latlng = String()
-    var image1 = String()
-    var image2 = String()
-    var image3 = String()
-    var image4 = String()
-
-    
-    
+//    var image1 = String()
+//    var image2 = String()
+//    var image3 = String()
+//    var image4 = String()
 }
