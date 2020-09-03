@@ -21,6 +21,8 @@ class SideMenuViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        self.tableView?.rowHeight = 50
+       // tableView.rowHeight = UITableView.automaticDimension
     }
 
      //MARK: Methods

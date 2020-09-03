@@ -32,4 +32,15 @@ class Constants {
         }
     }
     
+    /**
+    Convert UIImage to a base64 representation
+    - Parameters:
+    - image : passed image to be converted
+     - Returns: String
+    */
+    class func convertImageToBase64(image: UIImage) -> String {
+         let userImageData:NSData = image.jpegData(compressionQuality: 0.25)! as NSData
+         let userImgString = userImageData.base64EncodedString(options: .init(rawValue: 0))
+         return userImgString
+     }
 }
