@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		285D205F37555DC0CC2D0533 /* Pods_NWCWaterReports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E7400FD322A33DAB03EB1A0 /* Pods_NWCWaterReports.framework */; };
+		2885432F250101BF0037B010 /* UserDefaultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2885432E250101BF0037B010 /* UserDefaultExtension.swift */; };
 		288D2BB324FFDA1800A11E0A /* ReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288D2BB224FFDA1800A11E0A /* ReportsViewController.swift */; };
 		28A2A64A24FBE6F300B68F05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2A64924FBE6F300B68F05 /* AppDelegate.swift */; };
 		28A2A65324FBE6F400B68F05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A65224FBE6F400B68F05 /* Assets.xcassets */; };
@@ -42,7 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E718A0A12F01BFE60797CEF /* Pods_NWCWaterReports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NWCWaterReports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2885432E250101BF0037B010 /* UserDefaultExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultExtension.swift; sourceTree = "<group>"; };
 		288D2BB224FFDA1800A11E0A /* ReportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsViewController.swift; sourceTree = "<group>"; };
 		28A2A64624FBE6F300B68F05 /* NWCWaterReports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NWCWaterReports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28A2A64924FBE6F300B68F05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,8 +79,9 @@
 		28A2A69A24FFAD9200B68F05 /* ReportsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsTableViewCell.swift; sourceTree = "<group>"; };
 		28A2A69B24FFAD9200B68F05 /* ReportsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportsTableViewCell.xib; sourceTree = "<group>"; };
 		3CC858402500F9AA0028A988 /* VerifyOtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOtpVC.swift; sourceTree = "<group>"; };
-		A1193A22B34158E5AC86CCC7 /* Pods-NWCWaterReports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NWCWaterReports.debug.xcconfig"; path = "Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports.debug.xcconfig"; sourceTree = "<group>"; };
-		B99F91BA822F68DA711DCEDF /* Pods-NWCWaterReports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NWCWaterReports.release.xcconfig"; path = "Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports.release.xcconfig"; sourceTree = "<group>"; };
+		3E7400FD322A33DAB03EB1A0 /* Pods_NWCWaterReports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NWCWaterReports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ADAB6D691EA8E72969FF879 /* Pods-NWCWaterReports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NWCWaterReports.release.xcconfig"; path = "Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports.release.xcconfig"; sourceTree = "<group>"; };
+		BA756735BBFF522F0DAE4ADF /* Pods-NWCWaterReports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NWCWaterReports.debug.xcconfig"; path = "Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				28A2A68924FD05D700B68F05 /* navgationBar.swift */,
+				2885432E250101BF0037B010 /* UserDefaultExtension.swift */,
 				28A2A67824FBECBA00B68F05 /* Fonts */,
 				28A2A68724FD04A200B68F05 /* Constants.swift */,
 			);
@@ -381,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2885432F250101BF0037B010 /* UserDefaultExtension.swift in Sources */,
 				28A2A68824FD04A200B68F05 /* Constants.swift in Sources */,
 				28A2A69024FD29DE00B68F05 /* Network.swift in Sources */,
 				28A2A64A24FBE6F300B68F05 /* AppDelegate.swift in Sources */,
