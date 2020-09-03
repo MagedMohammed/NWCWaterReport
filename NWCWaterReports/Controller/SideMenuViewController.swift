@@ -12,7 +12,7 @@ class SideMenuViewController: UIViewController {
 
     //MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
-    let source = [Item(icon: #imageLiteral(resourceName: "home-icon"), name: "home".localized()) , Item(icon: #imageLiteral(resourceName: "history-icon"), name: "history".localized()) , Item(icon: #imageLiteral(resourceName: "account-icon"), name: "personal_information".localized()) , Item(icon: #imageLiteral(resourceName: "nwclog1"), name: "NWC".localized()) ,Item(icon: #imageLiteral(resourceName: "ebranch-logo"), name: "eBranch".localized()) , Item(icon: #imageLiteral(resourceName: "phone-icon-1"), name: "930 00 1744")]
+    let source = [Item(icon: #imageLiteral(resourceName: "home-icon"), name: "home".localized()) , Item(icon: #imageLiteral(resourceName: "account-icon"), name: "personal_information".localized()) , Item(icon: #imageLiteral(resourceName: "nwclog1"), name: "NWC".localized()) ,Item(icon: #imageLiteral(resourceName: "ebranch-logo"), name: "eBranch".localized()) , Item(icon: #imageLiteral(resourceName: "phone-icon-1"), name: "930 00 1744")]
     
     
     //MARK: lifeCycle Methods
@@ -22,6 +22,7 @@ class SideMenuViewController: UIViewController {
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
         self.tableView?.rowHeight = 50
+       // tableView.rowHeight = UITableView.automaticDimension
     }
 
      //MARK: Methods
@@ -57,21 +58,16 @@ extension SideMenuViewController : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil)      
         case 1:
-            let storyboard = UIStoryboard(name:"Home", bundle: nil)
-                let PersonalDetailsVC = storyboard.instantiateViewController(withIdentifier: "ReportsVC") as! ReportsViewController
-                    self.navigationController?.pushViewController(PersonalDetailsVC, animated: true)
-            
-        case 2:
             let storyboard = UIStoryboard(name:"Main", bundle: nil)
               let PersonalDetailsVC = storyboard.instantiateViewController(withIdentifier: "PersonalDetailsVC") as! PersonalDetailsViewController
                  self.navigationController?.pushViewController(PersonalDetailsVC, animated: true)
-        case 3 :
+        case 2 :
            openWebView(stringUrl: "https://www.nwc.com.sa")
-        case 4:
+        case 3:
             openWebView(stringUrl: "https://e.nwc.com.sa")
-        case 5 :
+        case 4 :
             if let url = NSURL(string: "tel://\(920001744)"), UIApplication.shared.canOpenURL(url as URL) {
                 UIApplication.shared.openURL(url as URL)
             }
