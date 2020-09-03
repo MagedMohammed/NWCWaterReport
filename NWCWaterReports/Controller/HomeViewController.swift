@@ -163,8 +163,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func submitAction(_ sender: UIButton) {
         self.formData.comments = self.problemTextView.text ?? ""
         print(self.formData)
-        NetworkRequest.submitComplaints(parameter: self.formData) { (data, error) in
-            print(data)
+        if Constants.LoginObject?.isLogged ?? false {
+            NetworkRequest.submitComplaints(parameter: self.formData) { (data, error) in
+                      print(data)
+        }
+        }else{
+            let vc = PersonalDetailsViewController.instance()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
 //        NetworkRequest.submitComplaints(parameter: self.formData)
     }

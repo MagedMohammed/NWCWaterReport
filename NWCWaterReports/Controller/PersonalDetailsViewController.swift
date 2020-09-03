@@ -9,7 +9,7 @@
 import UIKit
 
 
-class LoginObj: NSObject, NSCoding{
+class LoginObj: Codable{
     var name: String
     var email:String
     var phoneNumber:String
@@ -117,8 +117,6 @@ class PersonalDetailsViewController: UIViewController {
     //MARK: Actions
     @IBAction func submitBtnAction(_ sender: UIButton) {
         let loginObject = LoginObj(name: nameTF.text ?? ""  , email: emailTF.text ?? ""  , phoneNumber: mobileTF.text ?? "" , token: "",isLogged:true)
-        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: loginObject)
-        userDefaults.set(encodedData,forKey: "LoginObject")
-        userDefaults.synchronize()
+            userDefaults.save(customObject:loginObject, inKey: "LoginObject")
     }
 }
