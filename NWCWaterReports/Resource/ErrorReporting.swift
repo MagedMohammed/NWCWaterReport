@@ -29,7 +29,7 @@ extension ErrorFeedBack where Self:UIViewController
         let VC = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         VC.setValue(attrString, forKey: "attributedMessage")
         VC.setValue(attributedTitle, forKey: "attributedTitle")
-        VC.addAction(UIAlertAction(title: "OK".localized, style: .default, handler: {_ in self.dismiss(animated: true, completion: nil)}))
+        VC.addAction(UIAlertAction(title: "OK".localized(), style: .default, handler: {_ in self.dismiss(animated: true, completion: nil)}))
 
         present(VC, animated: true)
     }
@@ -47,7 +47,7 @@ extension ErrorFeedBack where Self:UIViewController
         }
         VC.setValue(attrString, forKey: "attributedMessage")
         VC.setValue(attributedTitle, forKey: "attributedTitle")
-        VC.addAction(UIAlertAction(title: "OK".localized, style: .default, handler: {_ in self.dismiss(animated: true, completion: nil)}))
+        VC.addAction(UIAlertAction(title: "OK".localized(), style: .default, handler: {_ in self.dismiss(animated: true, completion: nil)}))
 
         present(VC, animated: true)
     }
@@ -65,7 +65,7 @@ extension ErrorFeedBack where Self:UIViewController
                }
         VC.setValue(attrString, forKey: "attributedMessage")
         VC.setValue(attributedTitle, forKey: "attributedTitle")
-        VC.addAction(UIAlertAction(title: "OK".localized, style: .default, handler: {_ in self.dismiss(animated: true, completion: nil)
+        VC.addAction(UIAlertAction(title: "OK".localized(), style: .default, handler: {_ in self.dismiss(animated: true, completion: nil)
             completion()
         }))
         present(VC, animated: true)

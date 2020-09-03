@@ -87,10 +87,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     //    MARK:- Method
     func setDataForComplaints(){
         self.complaintsList = [
-            Complaints(id: "CM_WVIO",title: "water_misuse".localized(), selectedImage:"04c", image: "04o"),
-            Complaints(id: "CM_SEVI",title: "sewage_overflow".localized(), selectedImage: "03c", image: "03o"),
-            Complaints(id: "CM_LKGE_M",title: "leak_meter".localized(), selectedImage: "02c", image: "02o"),
-            Complaints(id: "CM_LKGE",title: "water_leakage".localized(), selectedImage: "01c", image: "01o")
+            Complaints(id: "CM_WVIO",title: "water_misuse".localized(), selectedImage:"04c", image: "04o",isSelected: false),
+            Complaints(id: "CM_SEVI",title: "sewage_overflow".localized(), selectedImage: "03c", image: "03o",isSelected: false),
+            Complaints(id: "CM_LKGE_M",title: "leak_meter".localized(), selectedImage: "02c", image: "02o",isSelected: false),
+            Complaints(id: "CM_LKGE",title: "water_leakage".localized(), selectedImage: "01c", image: "01o",isSelected: false)
         ]
     }
     
