@@ -11,6 +11,9 @@ import Localization
 
 class Constants {
     
+    static var  decoded  = UserDefaults.standard.data(forKey: "LoginObject")
+    static var LoginObject = NSKeyedUnarchiver.unarchiveObject(with: decoded!) as! [LoginObj]
+//    static var LoginObject = UserDefaults.standard.value(forKey: "LoginObject")
     static func setLanguage(){
         let preferredLanguage = UserDefaults.standard.string(forKey: "languageCode" )
         if preferredLanguage != "en" {
