@@ -118,5 +118,6 @@ class PersonalDetailsViewController: UIViewController {
     @IBAction func submitBtnAction(_ sender: UIButton) {
         let loginObject = LoginObj(name: nameTF.text ?? ""  , email: emailTF.text ?? ""  , phoneNumber: mobileTF.text ?? "" , token: "",isLogged:true)
             userDefaults.save(customObject:loginObject, inKey: "LoginObject")
+            userDefaults.synchronize()
     }
 }

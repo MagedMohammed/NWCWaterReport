@@ -18,6 +18,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     //    MARK:- Outlet
     
+    @IBOutlet weak var sideMenuBtn: UIBarButtonItem!
     @IBOutlet weak var imageLabel: UILabel!{
         didSet{
             self.imageLabel.isHidden = true
@@ -66,7 +67,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     //    MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "hamburger"), style: .done, target: self, action: #selector(didTapMenu))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "hamburger"), style: .done, target: self, action: #selector(didTapMenu))
         let lati = CLLocationDegrees(exactly: 24.774265) ??  CLLocationDegrees()
         let longi = CLLocationDegrees(exactly: 46.738586) ??  CLLocationDegrees()
         let location = CLLocation(latitude: lati, longitude: longi)
@@ -103,6 +104,18 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    @IBAction func sideMenuTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "sideMenu", bundle: nil)
+              let menu = storyboard.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuNavigationController
+              if languageCode == "en" {
+                  menu.leftSide = true
+              } else {
+                  menu.leftSide = false
+              }
+              DispatchQueue.main.async {
+                  self.present(menu, animated: true, completion: nil)
+              }
+    }
     @objc func didTapMenu(){
         let storyboard = UIStoryboard(name: "sideMenu", bundle: nil)
         let menu = storyboard.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuNavigationController
