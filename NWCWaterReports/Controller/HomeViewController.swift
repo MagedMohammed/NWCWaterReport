@@ -178,7 +178,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         print(self.formData)
         if Constants.LoginObject?.isLogged ?? false {
             NetworkRequest.submitComplaints(parameter: self.formData) { (data, error) in
-                      print(data)
+                print(data ?? "")
         }
         }else{
             let vc = PersonalDetailsViewController.instance()
@@ -189,7 +189,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func cancelAction(_ sender: UIButton) {
         self.imageLabel.isHidden = true
-        self.formData.image = [UIImage]()
+        self.formData.image = [String]()
         self.formData.descrption = ""
         self.problemTextView.text = ""
         self.setDataForComplaints()
@@ -233,7 +233,8 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage
         {
-            self.formData.image.append(image)
+            let image2String = Constants.convertImageToBase64(image: image)
+            self.formData.image.append(image2String)
             self.imageLabel.isHidden = false
             self.imageLabel.text = "\(self.formData.image.count)"
         }
