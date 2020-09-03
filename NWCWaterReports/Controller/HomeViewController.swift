@@ -163,7 +163,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func submitAction(_ sender: UIButton) {
         self.formData.comments = self.problemTextView.text ?? ""
         print(self.formData)
-        NetworkRequest.getOTP(mobile: "0557686624")
+        NetworkRequest.submitComplaints(parameter: self.formData) { (data, error) in
+            print(data)
+        }
 //        NetworkRequest.submitComplaints(parameter: self.formData)
     }
     
