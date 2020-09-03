@@ -63,6 +63,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     var currentLoc: CLLocation!
     var complaintsList = [Complaints]()
     var formData = ComplaintsFormData()
+    let userdefults = UserDefaults.standard
     
     //    MARK:- ViewLifeCycle
     override func viewDidLoad() {
@@ -163,14 +164,16 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             languageCode = "en"
             UIView.appearance().semanticContentAttribute = .forceLeftToRight
             setupMainWindow()
-            UserDefaults.standard.set("en", forKey: "languageCode")
+            userdefults.set("ar", forKey: "languageCode")
+            userdefults.synchronize()
             
         } else if preferredLanguage != "ar" {
             Localization.preferredLanguage = LocalizableLanguage(code: LocalizableLanguage.arabic.code)!.code
             languageCode = "ar"
             UIView.appearance().semanticContentAttribute = .forceRightToLeft
             setupMainWindow()
-            UserDefaults.standard.set("ar", forKey: "languageCode")
+            userdefults.set("ar", forKey: "languageCode")
+            userdefults.synchronize()
         }
     }
     @IBAction func submitAction(_ sender: UIButton) {
