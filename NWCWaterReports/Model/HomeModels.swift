@@ -18,7 +18,7 @@ struct Complaints{
 }
 
 struct ComplaintsFormData{
-    var image:[UIImage] = [UIImage]()
+    var image:[String] = [String]()
     var complaintsType = String()
     var descrption = String()
     var mobileNumber = String()

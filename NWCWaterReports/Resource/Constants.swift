@@ -11,7 +11,6 @@ import Localization
 
 class Constants {
     
-    
     static var LoginObject = UserDefaults.standard.retrieve(object: LoginObj.self, fromKey: "LoginObject")
     static func setLanguage(){
         let preferredLanguage = UserDefaults.standard.string(forKey: "languageCode" )
