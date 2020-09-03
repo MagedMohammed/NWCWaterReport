@@ -8,6 +8,13 @@
 
 import UIKit
 
+struct ReportsList: Codable{
+    var user_name = String()
+    var image = String()
+    var date = Constants.dateToString()
+    var complaintsName = String()
+}
+
 class ReportsViewController: UIViewController {
 
 //    MARK:- Outlet
@@ -15,7 +22,7 @@ class ReportsViewController: UIViewController {
     @IBOutlet weak var reportsTableView: UITableView!
     
     
-    var reportsData = [ComplaintsFormData]()
+    var reportsData = [ReportsList]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +30,14 @@ class ReportsViewController: UIViewController {
         reportsTableView.dataSource = self
         reportsTableView.register(UINib(nibName: "ReportsTableViewCell", bundle: nil), forHeaderFooterViewReuseIdentifier: "ReportsTableViewCell")
     }
+    
+    func setDataForList(){
+        let data = UserDefaults.standard.retrieve(object: [ReportsList].self, fromKey: "Reports") ?? [ReportsList]()
+        self.reportsData = data
+        
+        
+    }
+    
 }
 extension ReportsViewController: UITableViewDelegate, UITableViewDataSource{
     
@@ -32,8 +47,12 @@ extension ReportsViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ReportsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ReportsTableViewCell", for: indexPath) as! ReportsTableViewCell
-//        let name = reportsData[indexPath.row].
+        let name = reportsData[indexPath.row].user_name
+        let image = reportsData[indexPath.row].image
+        let date = reportsData[indexPath.row].date
+        let complintName = reportsData[indexPath.row].complaintsName
         
+        cell.setCell(name: name, date: date, descrption: description,image:image)
         return cell
     }
     

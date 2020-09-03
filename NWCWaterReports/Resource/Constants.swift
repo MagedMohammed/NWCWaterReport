@@ -41,4 +41,10 @@ class Constants {
          let userImgString = userImageData.base64EncodedString(options: .init(rawValue: 0))
          return userImgString
      }
+    class func dateToString()-> String{
+        let df = DateFormatter()
+        df.dateFormat = "dd-MM-yyyy"
+        let now = df.string(from: Date())
+        return now
+    }
 }

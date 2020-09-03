@@ -61,22 +61,22 @@ class NetworkRequest{
     static func submitComplaints(parameter:ComplaintsFormData, callback:@escaping (String?, Error?)->()){
         
         let parameters:[String:String] = [
-            "mobileNumber":parameter.mobileNumber,
-            "token": parameter.token,
+            "mobileNumber":parameter.loginData.phoneNumber,
+            "token": parameter.loginData.token,
             "complaintType":parameter.complaintsType,
             "cbu": "TCBU",
-            "deviceId": parameter.deviceId ?? "",
-            "osVersion": parameter.osVersion,
+            "deviceId": parameter.loginData.deviceId,
+            "osVersion": parameter.loginData.osVersion,
             "appVersion":parameter.appVersion ?? "",
             "comments":parameter.comments,
             "xy":parameter.xy,
             "latlng":parameter.latlng,
             "coordinatesSource":"S",
-            "image1":"",
-            "image2":"",
-            "image3":"",
-            "imaage4":"",
-            "image4":""
+            "image1":parameter.image[0]  ?? "null"
+//            "image2":parameter.image[1]  ?? "null",
+//            "image3":parameter.image[2]  ?? "null",
+//            "imaage4":parameter.image[3] ?? "null",
+//            "image4":parameter.image[4]  ?? "null"
         ]
         
         AlamofireSoap.soapRequest("http://10.66.120.186/waterreport/v3/myservice.asmx", soapmethod: "submitComplaint", soapparameters: parameters, namespace: "http://schemas.xmlsoap.org/soap/envelope").responseString { response in

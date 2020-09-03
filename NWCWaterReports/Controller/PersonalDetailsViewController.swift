@@ -9,43 +9,19 @@
 import UIKit
 
 
-class LoginObj: Codable{
-    var name: String
-    var email:String
-    var phoneNumber:String
-    var token:String
-    var isLogged:Bool
-    
-    init(name: String, email: String, phoneNumber: String,token:String,isLogged:Bool) {
-        self.name = name
-        self.email = email
-        self.phoneNumber = phoneNumber
-        self.token = token
-        self.isLogged = isLogged
-        
-    }
-    
-    
-    required convenience init(coder aDecoder: NSCoder) {
-        let name = aDecoder.decodeObject(forKey: "name") as! String
-        let email = aDecoder.decodeObject(forKey: "email") as! String
-        let phoneNumber = aDecoder.decodeObject(forKey: "phoneNumber") as! String
-        let token = aDecoder.decodeObject(forKey: "token") as! String
-        let isLogged = aDecoder.decodeObject(forKey: "isLogged") as! Bool
-        self.init(name: name, email: email, phoneNumber: phoneNumber,token:token,isLogged:isLogged)
-    }
-
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(name, forKey: "name")
-        aCoder.encode(email, forKey: "email")
-        aCoder.encode(phoneNumber, forKey: "phoneNumber")
-        aCoder.encode(token, forKey: "token")
-        aCoder.encode(isLogged, forKey: "isLogged")
-    }
+struct LoginObj: Codable{
+    var name =          String()
+    var email =         String()
+    var phoneNumber =   String()
+    var token =         String()
+    var messageRef =    String()
+    var isLogged =      false
+    var deviceId = UIDevice.current.identifierForVendor?.uuidString ?? ""
+    var osVersion = UIDevice.current.systemVersion ?? ""
 }
 
-class PersonalDetailsViewController: UIViewController {
-
+class PersonalDetailsViewController: UIViewController,ErrorFeedBack {
+    
     //MARK: IBOutlets
     @IBOutlet weak var personalInfoLabel: UILabel! {
         didSet {
@@ -55,17 +31,17 @@ class PersonalDetailsViewController: UIViewController {
     @IBOutlet weak var nameTF: UITextField! {
         didSet {
             nameTF.placeholder = "name".localized()
-             nameTF.textAlignment = languageCode == "en" ? .left : .right
+            nameTF.textAlignment = languageCode == "en" ? .left : .right
         }
     }
     @IBOutlet weak var mobileTF: UITextField! {
         didSet {
-           mobileTF.placeholder = "05xxxxxxxx"
-             mobileTF.textAlignment = languageCode == "en" ? .left : .right
+            mobileTF.placeholder = "05xxxxxxxx"
+            mobileTF.textAlignment = languageCode == "en" ? .left : .right
         }
     }
     @IBOutlet weak var emailTF: UITextField!{
-         didSet {
+        didSet {
             emailTF.placeholder = "email".localized()
             emailTF.textAlignment = languageCode == "en" ? .left : .right
             
@@ -82,42 +58,66 @@ class PersonalDetailsViewController: UIViewController {
         return vc
     }
     
-     let userDefaults = UserDefaults.standard
-    
+    var loginObject = LoginObj()
     //MARK: lifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-      customizeNavigationBar()
+        customizeNavigationBar()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         if languageCode == "en" {
             view.semanticContentAttribute = .forceRightToLeft
         } else {
-             view.semanticContentAttribute = .forceLeftToRight
+            view.semanticContentAttribute = .forceLeftToRight
         }
     }
-        
+    
     //MARK: Methods
     func customizeNavigationBar() {
-      if let navController = navigationController {
-        title = "water_reports".localized()
+        if let navController = navigationController {
+            title = "water_reports".localized()
             navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "back sign"), style: .done, target: self, action: #selector(backBtnPressed))
             
-           navController.navigationBar.barTintColor =  #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-           navController.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
+            navController.navigationBar.barTintColor =  #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+            navController.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
         }
-      }
-
-
+    }
+    
+    
     @objc func backBtnPressed(){
         navigationController?.popViewController(animated: true)
     }
     
     //MARK: Actions
     @IBAction func submitBtnAction(_ sender: UIButton) {
-        let loginObject = LoginObj(name: nameTF.text ?? ""  , email: emailTF.text ?? ""  , phoneNumber: mobileTF.text ?? "" , token: "",isLogged:true)
-            userDefaults.save(customObject:loginObject, inKey: "LoginObject")
-            userDefaults.synchronize()
+        guard let name = self.nameTF.text,!name.isEmpty else{
+            return
+        }
+        guard let email = self.emailTF.text,!email.isEmpty else{return
+            
+        }
+        guard let phoneNumber = self.mobileTF.text,!phoneNumber.isEmpty else{return}
+        NetworkRequest.getOTP(mobile: phoneNumber) { (data, error) in
+            if let data = data, error == nil{
+                self.loginObject = LoginObj(name: name , email: email, phoneNumber:phoneNumber,messageRef: data)
+                    
+                self.performSegue(withIdentifier: "goToOTP", sender: self.loginObject)
+        
+            }else{
+                self.showErrorAlert(title: "error", msg: error?.localizedDescription ?? "")
+            }
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToOTP" {
+            if let destination = segue.destination as? VerifyOtpVC {
+                if let id = sender as? LoginObj {
+                    destination.loginObj = id
+                }
+            }
+        }
     }
 }

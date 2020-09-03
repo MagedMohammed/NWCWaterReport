@@ -14,7 +14,7 @@ import Localization
 import SideMenu
 
 
-class HomeViewController: UIViewController, CLLocationManagerDelegate {
+class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeedBack {
     
     //    MARK:- Outlet
     
@@ -63,11 +63,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     var currentLoc: CLLocation!
     var complaintsList = [Complaints]()
     var formData = ComplaintsFormData()
-    
+    var selectedImage = ""
+    var complaintsName = ""
     //    MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "hamburger"), style: .done, target: self, action: #selector(didTapMenu))
+        //        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "hamburger"), style: .done, target: self, action: #selector(didTapMenu))
         let lati = CLLocationDegrees(exactly: 24.774265) ??  CLLocationDegrees()
         let longi = CLLocationDegrees(exactly: 46.738586) ??  CLLocationDegrees()
         let location = CLLocation(latitude: lati, longitude: longi)
@@ -81,6 +82,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         super.viewWillAppear(true)
         setColorOfNav()
         imageInNavBar()
+        Constants.LoginObject = UserDefaults.standard.retrieve(object: LoginObj.self, fromKey: "LoginObject")
     }
     
     
@@ -106,15 +108,15 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func sideMenuTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "sideMenu", bundle: nil)
-              let menu = storyboard.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuNavigationController
-              if languageCode == "en" {
-                  menu.leftSide = true
-              } else {
-                  menu.leftSide = false
-              }
-              DispatchQueue.main.async {
-                  self.present(menu, animated: true, completion: nil)
-              }
+        let menu = storyboard.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuNavigationController
+        if languageCode == "en" {
+            menu.leftSide = true
+        } else {
+            menu.leftSide = false
+        }
+        DispatchQueue.main.async {
+            self.present(menu, animated: true, completion: nil)
+        }
     }
     @objc func didTapMenu(){
         let storyboard = UIStoryboard(name: "sideMenu", bundle: nil)
@@ -129,7 +131,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     func setMap(location:CLLocation,zoom:Float){
-
+        
         let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: zoom)
         let mapView = GMSMapView.map(withFrame: self.mapView.frame, camera: camera)
         self.mapView.addSubview(mapView)
@@ -145,6 +147,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         self.formData.latlng = "(\(locValue.latitude), \(locValue.longitude))"
         setMap(location:manager.location!, zoom: 15)
     }
+    
     //    MARK:- Action
     
     @IBAction func getLocationAction(_ sender: UIButton) {
@@ -173,30 +176,45 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             UserDefaults.standard.set("ar", forKey: "languageCode")
         }
     }
+    
     @IBAction func submitAction(_ sender: UIButton) {
         self.formData.comments = self.problemTextView.text ?? ""
         print(self.formData)
         if Constants.LoginObject?.isLogged ?? false {
+            
             NetworkRequest.submitComplaints(parameter: self.formData) { (data, error) in
-                print(data ?? "")
-        }
+                
+                if let data = data, error == nil{
+                    var obj = UserDefaults.standard.retrieve(object: [ReportsList].self, fromKey: "Reports")
+                    let insertObj = ReportsList(user_name:self.formData.loginData.name , image: self.selectedImage, complaintsName: self.complaintsName)
+                    obj?.append(insertObj)
+                    
+                    UserDefaults.standard.save(customObject: obj, inKey: "Reports")
+                    
+                    self.showErrorAlert(title: "done".localized(), msg: "submit_done".localized())
+                    self.clearData()
+                    
+                }
+            }
         }else{
             let vc = PersonalDetailsViewController.instance()
             self.navigationController?.pushViewController(vc, animated: true)
         }
-//        NetworkRequest.submitComplaints(parameter: self.formData)
+        //        NetworkRequest.submitComplaints(parameter: self.formData)
     }
     
     @IBAction func cancelAction(_ sender: UIButton) {
+
+        clearData()
+    }
+    
+    func clearData(){
         self.imageLabel.isHidden = true
         self.formData.image = [String]()
         self.formData.descrption = ""
         self.problemTextView.text = ""
         self.setDataForComplaints()
-        
     }
-    
-    
     
 }
 
@@ -223,6 +241,9 @@ extension HomeViewController: UICollectionViewDelegate,  UICollectionViewDataSou
         self.setDataForComplaints()
         self.complaintsList[indexPath.row].isSelected = true
         self.formData.complaintsType = self.complaintsList[indexPath.row].id
+        self.selectedImage = self.complaintsList[indexPath.row].selectedImage
+        self.complaintsName = self.complaintsList[indexPath.row].title
+        
         collectionView.reloadData()
     }
 }

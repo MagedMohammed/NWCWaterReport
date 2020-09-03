@@ -142,8 +142,8 @@
 				28A2A68924FD05D700B68F05 /* navgationBar.swift */,
 				2885432E250101BF0037B010 /* UserDefaultExtension.swift */,
 				288543302501137E0037B010 /* ErrorReporting.swift */,
-				28A2A67824FBECBA00B68F05 /* Fonts */,
 				28A2A68724FD04A200B68F05 /* Constants.swift */,
+				28A2A67824FBECBA00B68F05 /* Fonts */,
 			);
 			path = Resource;
 			sourceTree = "<group>";

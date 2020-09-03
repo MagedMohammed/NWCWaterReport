@@ -39,10 +39,11 @@ class ReportsTableViewCell: UITableViewCell {
         // Initialization code
     }
     //    MARK:- Method
-    func setCell(name:String, date:String, descrption:String){
+    func setCell(name:String, date:String, descrption:String, image:String){
         self.nameValueLabel.text = name
         self.dateValueLabel.text = date
         self.descrptionValueLabel.text = description
+        self.reportImage.image = UIImage(named: image)
     }
     
 }

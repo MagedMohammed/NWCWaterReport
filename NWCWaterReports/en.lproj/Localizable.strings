@@ -29,3 +29,6 @@
 "name" = "Name";
 "email" = "Email";
 "register" = "Register";
+"otp_message_error" = "Please Enter OTP Code";
+"done" = "Done";
+"submit_done" = "Report was submitted successfully";
