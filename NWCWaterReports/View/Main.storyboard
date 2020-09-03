@@ -18,7 +18,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="البيانات الشخصية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1k-Yf-nqt">
                                 <rect key="frame" x="211.5" y="64" width="133.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.34953694822015402" green="0.55959219961008988" blue="0.84974093264248707" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.34901960784313724" green="0.5607843137254902" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NtL-SS-qxJ">
@@ -136,7 +136,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the sent code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6Z-2S-gdH">
                                 <rect key="frame" x="112.5" y="105" width="150" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.34901960780000002" green="0.56078431370000004" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JcC-Zf-Y3z">
@@ -181,6 +181,7 @@
                     <navigationItem key="navigationItem" id="3eR-uj-Pvh"/>
                     <connections>
                         <outlet property="VerfiyBtn" destination="3u7-ko-238" id="EEs-wu-hRr"/>
+                        <outlet property="headerLabel" destination="a6Z-2S-gdH" id="Vqq-uA-VC5"/>
                         <outlet property="verifyCodeTF" destination="JcC-Zf-Y3z" id="83Y-3d-Xcp"/>
                     </connections>
                 </viewController>

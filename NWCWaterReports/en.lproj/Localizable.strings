@@ -21,6 +21,7 @@
 "You don't have permission to access gallery." = "You don't have permission to access gallery.";
 
 "home" = "Home";
+"history" = "History";
 "personal_information" = "Personal Information";
 "NWC" = "NWC";
 "eBranch" = "ebranch";
@@ -29,3 +30,7 @@
 "name" = "Name";
 "email" = "Email";
 "register" = "Register";
+
+"backSign" = "backSign";
+"enter_the_sent_code" = "Enter The Sent Code";
+"verify" = "Verfiy";
