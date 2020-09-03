@@ -120,6 +120,5 @@ class PersonalDetailsViewController: UIViewController {
         let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: loginObject)
         userDefaults.set(encodedData,forKey: "LoginObject")
         userDefaults.synchronize()
-        NetworkRequest.getOTP(mobile: mobileTF.text ?? "")
     }
 }

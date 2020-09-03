@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		285D205F37555DC0CC2D0533 /* Pods_NWCWaterReports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E7400FD322A33DAB03EB1A0 /* Pods_NWCWaterReports.framework */; };
 		288D2BB324FFDA1800A11E0A /* ReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288D2BB224FFDA1800A11E0A /* ReportsViewController.swift */; };
 		28A2A64A24FBE6F300B68F05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2A64924FBE6F300B68F05 /* AppDelegate.swift */; };
 		28A2A65324FBE6F400B68F05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A65224FBE6F400B68F05 /* Assets.xcassets */; };
@@ -36,12 +35,14 @@
 		28A2A69424FE2FB900B68F05 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2A69224FE2FB900B68F05 /* SideMenuViewController.swift */; };
 		28A2A69624FE2FF700B68F05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A69524FE2FF600B68F05 /* Main.storyboard */; };
 		28A2A69824FE300800B68F05 /* sideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A69724FE300800B68F05 /* sideMenu.storyboard */; };
-		3CC858412500F9AA0028A988 /* VerifyOtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC858402500F9AA0028A988 /* VerifyOtpVC.swift */; };
 		28A2A69C24FFAD9200B68F05 /* ReportsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2A69A24FFAD9200B68F05 /* ReportsTableViewCell.swift */; };
 		28A2A69D24FFAD9200B68F05 /* ReportsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28A2A69B24FFAD9200B68F05 /* ReportsTableViewCell.xib */; };
+		3C52CA8E4B96960668FD12E6 /* Pods_NWCWaterReports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E718A0A12F01BFE60797CEF /* Pods_NWCWaterReports.framework */; };
+		3CC858412500F9AA0028A988 /* VerifyOtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC858402500F9AA0028A988 /* VerifyOtpVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E718A0A12F01BFE60797CEF /* Pods_NWCWaterReports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NWCWaterReports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		288D2BB224FFDA1800A11E0A /* ReportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsViewController.swift; sourceTree = "<group>"; };
 		28A2A64624FBE6F300B68F05 /* NWCWaterReports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NWCWaterReports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28A2A64924FBE6F300B68F05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,12 +74,11 @@
 		28A2A69224FE2FB900B68F05 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		28A2A69524FE2FF600B68F05 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		28A2A69724FE300800B68F05 /* sideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = sideMenu.storyboard; sourceTree = "<group>"; };
-		3CC858402500F9AA0028A988 /* VerifyOtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOtpVC.swift; sourceTree = "<group>"; };
 		28A2A69A24FFAD9200B68F05 /* ReportsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsTableViewCell.swift; sourceTree = "<group>"; };
 		28A2A69B24FFAD9200B68F05 /* ReportsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportsTableViewCell.xib; sourceTree = "<group>"; };
-		3E7400FD322A33DAB03EB1A0 /* Pods_NWCWaterReports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NWCWaterReports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6ADAB6D691EA8E72969FF879 /* Pods-NWCWaterReports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NWCWaterReports.release.xcconfig"; path = "Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports.release.xcconfig"; sourceTree = "<group>"; };
-		BA756735BBFF522F0DAE4ADF /* Pods-NWCWaterReports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NWCWaterReports.debug.xcconfig"; path = "Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports.debug.xcconfig"; sourceTree = "<group>"; };
+		3CC858402500F9AA0028A988 /* VerifyOtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOtpVC.swift; sourceTree = "<group>"; };
+		A1193A22B34158E5AC86CCC7 /* Pods-NWCWaterReports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NWCWaterReports.debug.xcconfig"; path = "Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports.debug.xcconfig"; sourceTree = "<group>"; };
+		B99F91BA822F68DA711DCEDF /* Pods-NWCWaterReports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NWCWaterReports.release.xcconfig"; path = "Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				285D205F37555DC0CC2D0533 /* Pods_NWCWaterReports.framework in Frameworks */,
+				3C52CA8E4B96960668FD12E6 /* Pods_NWCWaterReports.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,8 +99,8 @@
 				28A2A64824FBE6F300B68F05 /* NWCWaterReports */,
 				28A2A64724FBE6F300B68F05 /* Products */,
 				848CE0F56DC05FD1A303A65C /* Pods */,
-				52B5B4B8EF18EDC360219AE4 /* Frameworks */,
 				28A2A66224FBEA7E00B68F05 /* .gitignore */,
+				D2158EDF6CF247A3B617E8CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,21 +214,21 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		52B5B4B8EF18EDC360219AE4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3E7400FD322A33DAB03EB1A0 /* Pods_NWCWaterReports.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		848CE0F56DC05FD1A303A65C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BA756735BBFF522F0DAE4ADF /* Pods-NWCWaterReports.debug.xcconfig */,
-				6ADAB6D691EA8E72969FF879 /* Pods-NWCWaterReports.release.xcconfig */,
+				A1193A22B34158E5AC86CCC7 /* Pods-NWCWaterReports.debug.xcconfig */,
+				B99F91BA822F68DA711DCEDF /* Pods-NWCWaterReports.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D2158EDF6CF247A3B617E8CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E718A0A12F01BFE60797CEF /* Pods_NWCWaterReports.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,12 +238,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28A2A65A24FBE6F400B68F05 /* Build configuration list for PBXNativeTarget "NWCWaterReports" */;
 			buildPhases = (
-				6183C7FEBFB1BE40427825EB /* [CP] Check Pods Manifest.lock */,
+				13661412EBB50528BFE4AEF6 /* [CP] Check Pods Manifest.lock */,
 				28A2A64224FBE6F300B68F05 /* Sources */,
 				28A2A64324FBE6F300B68F05 /* Frameworks */,
 				28A2A64424FBE6F300B68F05 /* Resources */,
-				CA55DBE13F8F1CB87B932B36 /* [CP] Embed Pods Frameworks */,
-				4840CF9CAA870545C9541763 /* [CP] Copy Pods Resources */,
+				9121E7DFDB2E0DCEDC925E42 /* [CP] Embed Pods Frameworks */,
+				1D363AE4AD1748ABF2B112B7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -318,24 +318,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4840CF9CAA870545C9541763 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6183C7FEBFB1BE40427825EB /* [CP] Check Pods Manifest.lock */ = {
+		13661412EBB50528BFE4AEF6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -357,7 +340,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CA55DBE13F8F1CB87B932B36 /* [CP] Embed Pods Frameworks */ = {
+		1D363AE4AD1748ABF2B112B7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NWCWaterReports/Pods-NWCWaterReports-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9121E7DFDB2E0DCEDC925E42 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -537,7 +537,7 @@
 		};
 		28A2A65B24FBE6F400B68F05 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA756735BBFF522F0DAE4ADF /* Pods-NWCWaterReports.debug.xcconfig */;
+			baseConfigurationReference = A1193A22B34158E5AC86CCC7 /* Pods-NWCWaterReports.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -556,7 +556,7 @@
 		};
 		28A2A65C24FBE6F400B68F05 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6ADAB6D691EA8E72969FF879 /* Pods-NWCWaterReports.release.xcconfig */;
+			baseConfigurationReference = B99F91BA822F68DA711DCEDF /* Pods-NWCWaterReports.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
