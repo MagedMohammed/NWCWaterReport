@@ -329,7 +329,11 @@
                         <viewLayoutGuide key="safeArea" id="U5w-4d-mbm"/>
                     </view>
                     <navigationItem key="navigationItem" id="PvI-h9-55B">
-                        <barButtonItem key="leftBarButtonItem" image="text.justify" catalog="system" id="QEm-Mq-qgv"/>
+                        <barButtonItem key="leftBarButtonItem" image="text.justify" catalog="system" id="QEm-Mq-qgv">
+                            <connections>
+                                <action selector="sideMenuTapped:" destination="414-RD-AK7" id="baS-zM-BWP"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="a.circle.fill" catalog="system" id="VAd-pi-XFZ">
                             <connections>
                                 <action selector="languageAction:" destination="414-RD-AK7" id="RBT-Be-kN1"/>
@@ -347,6 +351,7 @@
                         <outlet property="problemLabel" destination="02j-Dv-siH" id="k9I-Da-tKE"/>
                         <outlet property="problemTextView" destination="4am-gs-5rC" id="ZUS-ie-zeO"/>
                         <outlet property="reportTypeLabel" destination="dgT-8J-KtE" id="iYU-cM-XSb"/>
+                        <outlet property="sideMenuBtn" destination="QEm-Mq-qgv" id="InW-Zl-gbm"/>
                         <outlet property="submitBu" destination="e3a-us-fcy" id="rkH-Vo-JvS"/>
                     </connections>
                 </viewController>

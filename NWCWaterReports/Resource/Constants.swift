@@ -11,21 +11,23 @@ import Localization
 
 class Constants {
     
+    static var LoginObject = UserDefaults.standard.retrieve(object: LoginObj.self, fromKey: "LoginObject")
     static func setLanguage(){
         let preferredLanguage = UserDefaults.standard.string(forKey: "languageCode" )
-        if preferredLanguage != "en" {
+        if preferredLanguage == "en" {
             Localization.preferredLanguage = LocalizableLanguage(code: LocalizableLanguage.english.code)!.code
             languageCode = "en"
             UIView.appearance().semanticContentAttribute = .forceLeftToRight
             setupMainWindow()
-            UserDefaults.standard.set("en", forKey: "languageCode")
+//            UserDefaults.standard.set("en", forKey: "languageCode")
             
-        } else if preferredLanguage != "ar" {
+        } else if preferredLanguage == "ar" || preferredLanguage == nil  {
             Localization.preferredLanguage = LocalizableLanguage(code: LocalizableLanguage.arabic.code)!.code
             languageCode = "ar"
             UIView.appearance().semanticContentAttribute = .forceRightToLeft
             setupMainWindow()
-            UserDefaults.standard.set("ar", forKey: "languageCode")
+//            UserDefaults.standard.set("ar", forKey: "languageCode")
+            
         }
     }
     

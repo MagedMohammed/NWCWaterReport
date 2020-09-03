@@ -18,6 +18,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     //    MARK:- Outlet
     
+    @IBOutlet weak var sideMenuBtn: UIBarButtonItem!
     @IBOutlet weak var imageLabel: UILabel!{
         didSet{
             self.imageLabel.isHidden = true
@@ -62,11 +63,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     var currentLoc: CLLocation!
     var complaintsList = [Complaints]()
     var formData = ComplaintsFormData()
+    let userdefults = UserDefaults.standard
     
     //    MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "hamburger"), style: .done, target: self, action: #selector(didTapMenu))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "hamburger"), style: .done, target: self, action: #selector(didTapMenu))
         let lati = CLLocationDegrees(exactly: 24.774265) ??  CLLocationDegrees()
         let longi = CLLocationDegrees(exactly: 46.738586) ??  CLLocationDegrees()
         let location = CLLocation(latitude: lati, longitude: longi)
@@ -86,10 +88,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     //    MARK:- Method
     func setDataForComplaints(){
         self.complaintsList = [
-            Complaints(id: "CM_WVIO",title: "water_misuse".localized(), selectedImage:"04c", image: "04o"),
-            Complaints(id: "CM_SEVI",title: "sewage_overflow".localized(), selectedImage: "03c", image: "03o"),
-            Complaints(id: "CM_LKGE_M",title: "leak_meter".localized(), selectedImage: "02c", image: "02o"),
-            Complaints(id: "CM_LKGE",title: "water_leakage".localized(), selectedImage: "01c", image: "01o")
+            Complaints(id: "CM_WVIO",title: "water_misuse".localized(), selectedImage:"04c", image: "04o",isSelected: false),
+            Complaints(id: "CM_SEVI",title: "sewage_overflow".localized(), selectedImage: "03c", image: "03o",isSelected: false),
+            Complaints(id: "CM_LKGE_M",title: "leak_meter".localized(), selectedImage: "02c", image: "02o",isSelected: false),
+            Complaints(id: "CM_LKGE",title: "water_leakage".localized(), selectedImage: "01c", image: "01o",isSelected: false)
         ]
     }
     
@@ -103,6 +105,18 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    @IBAction func sideMenuTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "sideMenu", bundle: nil)
+              let menu = storyboard.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuNavigationController
+              if languageCode == "en" {
+                  menu.leftSide = true
+              } else {
+                  menu.leftSide = false
+              }
+              DispatchQueue.main.async {
+                  self.present(menu, animated: true, completion: nil)
+              }
+    }
     @objc func didTapMenu(){
         let storyboard = UIStoryboard(name: "sideMenu", bundle: nil)
         let menu = storyboard.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuNavigationController
@@ -150,28 +164,35 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             languageCode = "en"
             UIView.appearance().semanticContentAttribute = .forceLeftToRight
             setupMainWindow()
-            UserDefaults.standard.set("en", forKey: "languageCode")
+            userdefults.set("ar", forKey: "languageCode")
+            userdefults.synchronize()
             
         } else if preferredLanguage != "ar" {
             Localization.preferredLanguage = LocalizableLanguage(code: LocalizableLanguage.arabic.code)!.code
             languageCode = "ar"
             UIView.appearance().semanticContentAttribute = .forceRightToLeft
             setupMainWindow()
-            UserDefaults.standard.set("ar", forKey: "languageCode")
+            userdefults.set("ar", forKey: "languageCode")
+            userdefults.synchronize()
         }
     }
     @IBAction func submitAction(_ sender: UIButton) {
         self.formData.comments = self.problemTextView.text ?? ""
         print(self.formData)
-        NetworkRequest.submitComplaints(parameter: self.formData) { (data, error) in
-            print(data)
+        if Constants.LoginObject?.isLogged ?? false {
+            NetworkRequest.submitComplaints(parameter: self.formData) { (data, error) in
+                print(data ?? "")
+        }
+        }else{
+            let vc = PersonalDetailsViewController.instance()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
 //        NetworkRequest.submitComplaints(parameter: self.formData)
     }
     
     @IBAction func cancelAction(_ sender: UIButton) {
         self.imageLabel.isHidden = true
-        self.formData.image = [UIImage]()
+        self.formData.image = [String]()
         self.formData.descrption = ""
         self.problemTextView.text = ""
         self.setDataForComplaints()
@@ -215,7 +236,8 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage
         {
-            self.formData.image.append(image)
+            let image2String = Constants.convertImageToBase64(image: image)
+            self.formData.image.append(image2String)
             self.imageLabel.isHidden = false
             self.imageLabel.text = "\(self.formData.image.count)"
         }
