@@ -21,6 +21,7 @@
 "You don't have permission to access gallery." = "You don't have permission to access gallery.";
 
 "home" = "Home";
+"history" = "History";
 "personal_information" = "Personal Information";
 "NWC" = "NWC";
 "eBranch" = "ebranch";
@@ -32,3 +33,7 @@
 "otp_message_error" = "Please Enter OTP Code";
 "done" = "Done";
 "submit_done" = "Report was submitted successfully";
+
+"backSign" = "backSign";
+"enter_the_sent_code" = "Enter The Sent Code";
+"verify" = "Verfiy";

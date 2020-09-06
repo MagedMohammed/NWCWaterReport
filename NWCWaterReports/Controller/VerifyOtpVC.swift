@@ -11,8 +11,17 @@ import UIKit
 class VerifyOtpVC: UIViewController,ErrorFeedBack {
     
     //MARK: IBOutlets
+    @IBOutlet weak var headerLabel: UILabel! {
+        didSet{
+            headerLabel.text = "enter_the_sent_code".localized()
+        }
+    }
     @IBOutlet weak var verifyCodeTF: UITextField!
-    @IBOutlet weak var VerfiyBtn: UIButton!
+    @IBOutlet weak var VerfiyBtn: UIButton!{
+        didSet{
+            VerfiyBtn.setTitle("verify".localized(), for: .normal)
+        }
+    }
     
     //    MARK:- Properties
     var loginObj:LoginObj?
