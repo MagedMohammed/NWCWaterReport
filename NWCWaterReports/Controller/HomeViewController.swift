@@ -65,6 +65,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeed
     var formData = ComplaintsFormData()
     var selectedImage = ""
     var complaintsName = ""
+    let userdefults = UserDefaults.standard
+    
     //    MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -166,14 +168,16 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeed
             languageCode = "en"
             UIView.appearance().semanticContentAttribute = .forceLeftToRight
             setupMainWindow()
-            UserDefaults.standard.set("en", forKey: "languageCode")
+            userdefults.set("ar", forKey: "languageCode")
+            userdefults.synchronize()
             
         } else if preferredLanguage != "ar" {
             Localization.preferredLanguage = LocalizableLanguage(code: LocalizableLanguage.arabic.code)!.code
             languageCode = "ar"
             UIView.appearance().semanticContentAttribute = .forceRightToLeft
             setupMainWindow()
-            UserDefaults.standard.set("ar", forKey: "languageCode")
+            userdefults.set("ar", forKey: "languageCode")
+            userdefults.synchronize()
         }
     }
     
