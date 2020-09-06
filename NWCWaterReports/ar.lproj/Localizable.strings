@@ -21,6 +21,7 @@
 "no_access_gallery." = "لا تملك الصلاحة للدخول الى معرض الصور.";
 
 "home" = "الرئيسية";
+"history" = "السجل";
 "personal_information" = "البيانات الشخصية";
 "NWC" = "شركة المياة الوطنية";
 "eBranch" = "الفرع الإلكتروني";
@@ -32,3 +33,7 @@
 "otp_message_error" = "من فضلك ادخل رمز OTP";
 "done" = "تم";
 "submit_done" = "تم ارسال البلاغ بنجاح";
+
+"backSign" = "nextSign";
+"enter_the_sent_code" = "أدخل الكود المرسل";
+"verify" = "تحقق";
