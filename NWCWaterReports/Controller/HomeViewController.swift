@@ -14,6 +14,7 @@ import Localization
 import SideMenu
 import NVActivityIndicatorView
 
+//     'SA': ('Saudi Arabia', (34.6323360532, 16.3478913436, 55.6666593769, 32.161008816)),
 
 class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeedBack, NVActivityIndicatorViewable {
     
