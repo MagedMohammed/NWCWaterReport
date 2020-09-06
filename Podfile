@@ -12,9 +12,9 @@ target 'NWCWaterReports' do
   pod 'IBAnimatable'
   pod 'IQKeyboardManager' #iOS8 and later
   pod 'Localization'
-  #  pod "RTWebService"
   pod 'AEXML'
   pod 'AlamofireSoap'
   pod 'SideMenu'
-  
+  pod 'NVActivityIndicatorView' , '~> 4.4.0'
+
 end

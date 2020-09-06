@@ -11,6 +11,9 @@ PODS:
   - IBAnimatable (6.1.0)
   - IQKeyboardManager (6.5.6)
   - Localization (1.0.2)
+  - NVActivityIndicatorView (4.4.1):
+    - NVActivityIndicatorView/Presenter (= 4.4.1)
+  - NVActivityIndicatorView/Presenter (4.4.1)
   - SideMenu (6.4.9)
 
 DEPENDENCIES:
@@ -20,6 +23,7 @@ DEPENDENCIES:
   - IBAnimatable
   - IQKeyboardManager
   - Localization
+  - NVActivityIndicatorView (~> 4.4.0)
   - SideMenu
 
 SPEC REPOS:
@@ -31,6 +35,7 @@ SPEC REPOS:
     - IBAnimatable
     - IQKeyboardManager
     - Localization
+    - NVActivityIndicatorView
     - SideMenu
 
 SPEC CHECKSUMS:
@@ -41,8 +46,9 @@ SPEC CHECKSUMS:
   IBAnimatable: 99dddd4c0625884a301ba3ecbc1615f8a390368e
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Localization: d13a9844f5ebe66da4fade64a122ffeb0ffa547b
+  NVActivityIndicatorView: f0a6b0ed2973d9544da268f4eb76696f0a9577b0
   SideMenu: 8ef57a3cfc024a2d3fc1c036c7fe98537baec9e0
 
-PODFILE CHECKSUM: 1b084e5023b2dde3c42b5cacbcf952fd17a08921
+PODFILE CHECKSUM: cc345833d3017f375dcc1f437850ed1cf7132e98
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

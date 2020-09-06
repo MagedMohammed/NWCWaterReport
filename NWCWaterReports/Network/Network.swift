@@ -60,7 +60,7 @@ class NetworkRequest{
     
     static func submitComplaints(parameter:ComplaintsFormData, callback:@escaping (String?, Error?)->()){
         
-        let parameters:[String:String] = [
+        var parameters:[String:String] = [
             "mobileNumber":parameter.loginData.phoneNumber,
             "token": parameter.loginData.token,
             "complaintType":parameter.complaintsType,
@@ -72,13 +72,12 @@ class NetworkRequest{
             "xy":parameter.xy,
             "latlng":parameter.latlng,
             "coordinatesSource":"S",
-            "image1":parameter.image[0]  ?? "null"
-//            "image2":parameter.image[1]  ?? "null",
-//            "image3":parameter.image[2]  ?? "null",
-//            "imaage4":parameter.image[3] ?? "null",
-//            "image4":parameter.image[4]  ?? "null"
         ]
-        
+        var i = 1
+        for image in parameter.image{
+            parameters["image\(i)"] = image
+            i+=1
+        }
         AlamofireSoap.soapRequest("http://10.66.120.186/waterreport/v3/myservice.asmx", soapmethod: "submitComplaint", soapparameters: parameters, namespace: "http://schemas.xmlsoap.org/soap/envelope").responseString { response in
             if let xmlString = response.value{
                 //                print("Request: \(response.value)")   // original url request
