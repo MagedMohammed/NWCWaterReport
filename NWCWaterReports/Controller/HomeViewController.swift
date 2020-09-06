@@ -12,9 +12,10 @@ import CoreLocation
 import GoogleMaps
 import Localization
 import SideMenu
+import NVActivityIndicatorView
 
 
-class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeedBack {
+class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeedBack, NVActivityIndicatorViewable {
     
     //    MARK:- Outlet
     
@@ -185,19 +186,24 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeed
         self.formData.comments = self.problemTextView.text ?? ""
         print(self.formData)
         if Constants.LoginObject?.isLogged ?? false {
-            
+            self.startAnimating()
             NetworkRequest.submitComplaints(parameter: self.formData) { (data, error) in
                 
                 if let data = data, error == nil{
-                    var obj = UserDefaults.standard.retrieve(object: [ReportsList].self, fromKey: "Reports")
-                    let insertObj = ReportsList(user_name:self.formData.loginData.name , image: self.selectedImage, complaintsName: self.complaintsName)
-                    obj?.append(insertObj)
-                    
-                    UserDefaults.standard.save(customObject: obj, inKey: "Reports")
-                    
-                    self.showErrorAlert(title: "done".localized(), msg: "submit_done".localized())
-                    self.clearData()
-                    
+                    if data == "OK"{
+                        var obj = UserDefaults.standard.retrieve(object: [ReportsList].self, fromKey: "Reports")
+                        let insertObj = ReportsList(user_name:self.formData.loginData.name , image: self.selectedImage, complaintsName: self.complaintsName)
+                        obj?.append(insertObj)
+                        
+                        UserDefaults.standard.save(customObject: obj, inKey: "Reports")
+                        if self.isAnimating{
+                            self.stopAnimating()
+                        }
+                        self.showErrorAlert(title: "done".localized(), msg: "submit_done".localized())
+                        self.clearData()
+                    }else{
+                        self.showErrorAlert(title: "error".localized(), msg: data)
+                    }
                 }
             }
         }else{
@@ -208,7 +214,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeed
     }
     
     @IBAction func cancelAction(_ sender: UIButton) {
-
+        
         clearData()
     }
     
