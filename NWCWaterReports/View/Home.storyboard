@@ -346,6 +346,7 @@
                         <outlet property="getImageFromCamiraBu" destination="Rd1-Ay-Bud" id="LLC-ZX-QjG"/>
                         <outlet property="getLocationBu" destination="XVn-X1-fEO" id="J63-EL-i58"/>
                         <outlet property="imageLabel" destination="I31-iE-epd" id="b7i-W5-v8g"/>
+                        <outlet property="languageItem" destination="VAd-pi-XFZ" id="T4W-h2-hYo"/>
                         <outlet property="mapView" destination="CKr-Mh-I8D" id="30U-Ob-Acv"/>
                         <outlet property="problemCollectionView" destination="sdz-5w-ugO" id="3kQ-DL-0rx"/>
                         <outlet property="problemLabel" destination="02j-Dv-siH" id="k9I-Da-tKE"/>

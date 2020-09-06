@@ -27,6 +27,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeed
             self.imageLabel.layer.masksToBounds = true
         }
     }
+    
+    @IBOutlet weak var languageItem: UIBarButtonItem!{
+        didSet{
+            self.languageItem.image = UIImage(systemName: languageCode == "ar" ? "e.circle.fill" : "a.circle.fill")
+        }
+    }
+    
     @IBOutlet weak var cancelBu: UIButton!{
         didSet{
             cancelBu.setTitle("cancel".localized(), for: .normal)
