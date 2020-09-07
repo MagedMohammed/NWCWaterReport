@@ -20,7 +20,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeed
     
     //    MARK:- Outlet
     
-    @IBOutlet weak var scrollView: UIScrollView!
+    
+    
     @IBOutlet weak var sideMenuBtn: UIBarButtonItem!
     @IBOutlet weak var imageLabel: UILabel!{
         didSet{
@@ -88,7 +89,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeed
         setDataForComplaints()
         self.problemCollectionView.delegate = self
         self.problemCollectionView.dataSource = self
-        scrollView.contentSize = CGSize(width: 414, height: 800) 
+//        scrollView.contentSize = CGSize(width: 414, height: 800)
     }
     
     override func viewWillAppear(_ animated: Bool) {
