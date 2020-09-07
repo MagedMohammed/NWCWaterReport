@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
-class VerifyOtpVC: UIViewController,ErrorFeedBack {
+class VerifyOtpVC: UIViewController , ErrorFeedBack , NVActivityIndicatorViewable {
     
     //MARK: IBOutlets
     @IBOutlet weak var headerLabel: UILabel! {
@@ -51,11 +52,13 @@ class VerifyOtpVC: UIViewController,ErrorFeedBack {
     
     @IBAction func VerifyBtnAction(_ sender: UIButton) {
         guard let code = verifyCodeTF.text, !code.isEmpty else{
-            self.showErrorAlert(title: "error".localized(), msg: "otp_message_error")
+            self.showErrorAlert(title: "error".localized(), msg: "otp_message_error".localized())
             return}
         
         if var loginData = self.loginObj{
+            self.startAnimating()
             NetworkRequest.authUser(mobil: loginData.phoneNumber, code: code, deviceId: loginData.deviceId, os: loginData.osVersion, messageRef: loginData.messageRef) { (data, error) in
+                self.stopAnimating()
                 if let token = data, error == nil {
                     loginData.token = token
                     loginData.isLogged = true

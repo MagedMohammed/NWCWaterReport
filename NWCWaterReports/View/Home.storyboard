@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="foh-RS-HOm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="foh-RS-HOm">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -25,31 +25,15 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="414-RD-AK7" customClass="HomeViewController" customModule="NWCWaterReports" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EOc-VA-JTi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o57-ke-tY2">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="778"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEY-qp-o6b">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="778"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CKr-Mh-I8D" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
-                                                <color key="backgroundColor" name="GrayColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="230" id="4PY-HX-POU"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderSides" value="bottom"/>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Z4b-gH-jCY">
                                                 <rect key="frame" x="0.0" y="230" width="414" height="60"/>
                                                 <subviews>
@@ -152,7 +136,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mcu-Y0-jyh">
-                                                <rect key="frame" x="0.0" y="526" width="414" height="248"/>
+                                                <rect key="frame" x="0.0" y="526" width="414" height="252"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4am-gs-5rC" customClass="AnimatableTextView" customModule="IBAnimatable">
                                                         <rect key="frame" x="16" y="16" width="382" height="120"/>
@@ -282,6 +266,22 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CKr-Mh-I8D" customClass="AnimatableView" customModule="IBAnimatable">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
+                                                <color key="backgroundColor" name="GrayColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="230" id="4PY-HX-POU"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderSides" value="bottom"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" name="PrimaryColor"/>
                                         <constraints>
@@ -310,7 +310,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="SEY-qp-o6b" firstAttribute="height" secondItem="o57-ke-tY2" secondAttribute="height" priority="250" id="HN7-Hm-Aks"/>
+                                    <constraint firstItem="SEY-qp-o6b" firstAttribute="centerY" secondItem="o57-ke-tY2" secondAttribute="centerY" id="VKM-k4-Nm7"/>
                                     <constraint firstItem="SEY-qp-o6b" firstAttribute="width" secondItem="o57-ke-tY2" secondAttribute="width" id="Yji-LU-rWv"/>
                                     <constraint firstAttribute="bottom" secondItem="SEY-qp-o6b" secondAttribute="bottom" id="dsa-kP-lmJ"/>
                                     <constraint firstAttribute="trailing" secondItem="SEY-qp-o6b" secondAttribute="trailing" id="jov-Db-E1c"/>
@@ -321,7 +321,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="U5w-4d-mbm" firstAttribute="bottom" secondItem="o57-ke-tY2" secondAttribute="bottom" id="AfT-0A-Olh"/>
+                            <constraint firstItem="U5w-4d-mbm" firstAttribute="bottom" secondItem="o57-ke-tY2" secondAttribute="bottom" id="A2m-nb-O38"/>
                             <constraint firstItem="o57-ke-tY2" firstAttribute="top" secondItem="U5w-4d-mbm" secondAttribute="top" id="V4T-rt-QTR"/>
                             <constraint firstItem="U5w-4d-mbm" firstAttribute="trailing" secondItem="o57-ke-tY2" secondAttribute="trailing" id="cfy-g9-3VH"/>
                             <constraint firstItem="o57-ke-tY2" firstAttribute="leading" secondItem="U5w-4d-mbm" secondAttribute="leading" id="hsy-kF-xju"/>
@@ -340,6 +340,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <size key="freeformSize" width="414" height="900"/>
                     <connections>
                         <outlet property="cancelBu" destination="sHP-rj-wMd" id="Zfw-lE-aIG"/>
                         <outlet property="getImageBu" destination="mRM-tf-3RX" id="rSj-OV-V6N"/>
@@ -352,6 +353,7 @@
                         <outlet property="problemLabel" destination="02j-Dv-siH" id="k9I-Da-tKE"/>
                         <outlet property="problemTextView" destination="4am-gs-5rC" id="ZUS-ie-zeO"/>
                         <outlet property="reportTypeLabel" destination="dgT-8J-KtE" id="iYU-cM-XSb"/>
+                        <outlet property="scrollView" destination="o57-ke-tY2" id="8rG-aT-G92"/>
                         <outlet property="sideMenuBtn" destination="QEm-Mq-qgv" id="InW-Zl-gbm"/>
                         <outlet property="submitBu" destination="e3a-us-fcy" id="rkH-Vo-JvS"/>
                     </connections>
@@ -472,13 +474,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="a.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="a.circle.fill" catalog="system" width="128" height="121"/>
         <image name="camera-icon" width="64" height="50"/>
-        <image name="checkmark" catalog="system" width="64" height="56"/>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="gallery-icon" width="59" height="49"/>
         <image name="location-icon" width="51" height="51"/>
-        <image name="text.justify" catalog="system" width="64" height="50"/>
-        <image name="xmark" catalog="system" width="64" height="56"/>
+        <image name="text.justify" catalog="system" width="128" height="100"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="GrayColor">
             <color red="0.90200001001358032" green="0.90200001001358032" blue="0.90200001001358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

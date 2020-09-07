@@ -26,6 +26,14 @@
 	<string>App needs to access Photo Library while Add a This Idea</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>App needs to access Photo Library while Add a This Idea</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>App need to access location to specify the place of the complaint</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>App need to access location to specify the place of the complaint</string>
+	<key>NSLocationUsageDescription</key>
+	<string>App need to access location to specify the place of the complaint</string>
+	<key>CFBundleDisplayName</key>
+	<string></string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -49,8 +57,6 @@
 	</array>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Application wants to use your location</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Application wants to use your location</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Myriad Pro Regular.ttf</string>
@@ -64,10 +70,10 @@
 		<string>gess-med.otf</string>
 		<string>gess-bold.ttf</string>
 	</array>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-    <key>NSAllowsArbitraryLoads</key>
-    <true/>
-    </dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

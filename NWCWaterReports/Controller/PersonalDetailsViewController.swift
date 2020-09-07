@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import NVActivityIndicatorView
 
 struct LoginObj: Codable{
     var name =          String()
@@ -20,7 +20,7 @@ struct LoginObj: Codable{
     var osVersion = UIDevice.current.systemVersion ?? ""
 }
 
-class PersonalDetailsViewController: UIViewController,ErrorFeedBack {
+class PersonalDetailsViewController: UIViewController , ErrorFeedBack , NVActivityIndicatorViewable {
     
     //MARK: IBOutlets
     @IBOutlet weak var personalInfoLabel: UILabel! {
@@ -98,7 +98,9 @@ class PersonalDetailsViewController: UIViewController,ErrorFeedBack {
             
         }
         guard let phoneNumber = self.mobileTF.text,!phoneNumber.isEmpty else{return}
+        self.startAnimating()
         NetworkRequest.getOTP(mobile: phoneNumber) { (data, error) in
+            self.stopAnimating()
             if let data = data, error == nil{
                 self.loginObject = LoginObj(name: name , email: email, phoneNumber:phoneNumber,messageRef: data)
                     

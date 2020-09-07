@@ -8,7 +8,7 @@
 "cancel" = "Cancel";
 "submit" = "Submit";
 "report_type" = "Report Type";
-"description" = "Description";
+"description" = "Description:";
 "water_misuse" = "Water Misuse";
 "sewage_overflow" = "Sewage Overflow";
 "leak_meter" = "Leak Meter";
@@ -27,7 +27,8 @@
 "eBranch" = "ebranch";
 
 "water_reports" = "Water Reports";
-"name" = "Name";
+"name" = "Name:";
+"date" = "Date:";
 "email" = "Email";
 "register" = "Register";
 "otp_message_error" = "Please Enter OTP Code";
@@ -37,3 +38,5 @@
 "backSign" = "backSign";
 "enter_the_sent_code" = "Enter The Sent Code";
 "verify" = "Verfiy";
+
+"reports" = "Reports";
