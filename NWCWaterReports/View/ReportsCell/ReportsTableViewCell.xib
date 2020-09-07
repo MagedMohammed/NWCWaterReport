@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Myriad Pro Bold.ttf">
+            <string>MyriadPro-Bold</string>
+        </array>
         <array key="Myriad Pro Regular.ttf">
             <string>MyriadPro-Regular</string>
         </array>
@@ -29,64 +32,64 @@
                             <constraint firstAttribute="width" constant="70" id="FNB-4l-rlQ"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ii1-Tb-BYg">
-                        <rect key="frame" x="102" y="16" width="202" height="84"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ii1-Tb-BYg">
+                        <rect key="frame" x="102" y="14" width="202" height="88"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zdo-km-NfW">
-                                <rect key="frame" x="0.0" y="0.0" width="202" height="6"/>
+                                <rect key="frame" x="0.0" y="0.0" width="202" height="15"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="891-cp-7fA">
-                                        <rect key="frame" x="0.0" y="0.0" width="51.5" height="6"/>
-                                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="891-cp-7fA">
+                                        <rect key="frame" x="0.0" y="0.0" width="54.5" height="15"/>
+                                        <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="17"/>
                                         <color key="textColor" name="PrimaryColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Fahd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1D-pI-DIZ">
-                                        <rect key="frame" x="59.5" y="0.0" width="142.5" height="6"/>
-                                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Fahd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1D-pI-DIZ">
+                                        <rect key="frame" x="62.5" y="0.0" width="139.5" height="15"/>
+                                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
                                         <color key="textColor" name="PrimaryColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="11L-Zh-TyN">
-                                <rect key="frame" x="0.0" y="26" width="202" height="58"/>
+                                <rect key="frame" x="0.0" y="30" width="202" height="58"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zMs-jb-6Ux">
-                                        <rect key="frame" x="0.0" y="0.0" width="138.5" height="25"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="25"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPj-FP-NPD">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPj-FP-NPD">
                                                 <rect key="frame" x="0.0" y="0.0" width="38" height="25"/>
-                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="16"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00/00/0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFX-e7-gyg">
-                                                <rect key="frame" x="46" y="0.0" width="92.5" height="25"/>
+                                                <rect key="frame" x="46" y="0.0" width="82" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="Bpp-jT-N9Q"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="16"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nR8-h8-6xX">
-                                        <rect key="frame" x="0.0" y="33" width="197.5" height="25"/>
+                                        <rect key="frame" x="0.0" y="33" width="176" height="25"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Txc-oH-au1">
-                                                <rect key="frame" x="0.0" y="0.0" width="97" height="25"/>
-                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="18"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="25"/>
+                                                <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="16"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00/00/0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95H-da-mkS">
-                                                <rect key="frame" x="105" y="0.0" width="92.5" height="25"/>
+                                                <rect key="frame" x="94" y="0.0" width="82" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="fcR-ac-Czb"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="16"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -101,8 +104,8 @@
                     <constraint firstItem="ii1-Tb-BYg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="8Ir-RL-ZNM"/>
                     <constraint firstItem="ii1-Tb-BYg" firstAttribute="leading" secondItem="uBZ-PZ-uuF" secondAttribute="trailing" constant="16" id="DRL-de-939"/>
                     <constraint firstItem="uBZ-PZ-uuF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="DWf-kl-KGG"/>
-                    <constraint firstItem="ii1-Tb-BYg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="ahA-Kp-I5U"/>
-                    <constraint firstAttribute="bottom" secondItem="ii1-Tb-BYg" secondAttribute="bottom" constant="16" id="gjp-B9-JAH"/>
+                    <constraint firstItem="ii1-Tb-BYg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="ahA-Kp-I5U"/>
+                    <constraint firstAttribute="bottom" secondItem="ii1-Tb-BYg" secondAttribute="bottom" constant="14" id="gjp-B9-JAH"/>
                     <constraint firstItem="uBZ-PZ-uuF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="iDw-2L-hHx"/>
                     <constraint firstAttribute="trailing" secondItem="ii1-Tb-BYg" secondAttribute="trailing" constant="16" id="vHq-3q-g2K"/>
                 </constraints>
@@ -117,7 +120,7 @@
                 <outlet property="nameValueLabel" destination="i1D-pI-DIZ" id="XuZ-Su-U1l"/>
                 <outlet property="reportImage" destination="uBZ-PZ-uuF" id="3hw-PU-aSv"/>
             </connections>
-            <point key="canvasLocation" x="139" y="131"/>
+            <point key="canvasLocation" x="-104" y="120"/>
         </tableViewCell>
     </objects>
     <resources>

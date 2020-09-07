@@ -42,7 +42,7 @@ class ReportsTableViewCell: UITableViewCell {
     func setCell(name:String, date:String, descrption:String, image:String){
         self.nameValueLabel.text = name
         self.dateValueLabel.text = date
-        self.descrptionValueLabel.text = description
+        self.descrptionValueLabel.text = descrption
         self.reportImage.image = UIImage(named: image)
     }
     

@@ -18,7 +18,11 @@ struct ReportsList: Codable{
 class ReportsViewController: UIViewController {
 
 //    MARK:- Outlet
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet{
+            titleLabel.text = "reports".localized()
+        }
+    }
     @IBOutlet weak var reportsTableView: UITableView!
     
     
@@ -28,7 +32,8 @@ class ReportsViewController: UIViewController {
         super.viewDidLoad()
         reportsTableView.delegate = self
         reportsTableView.dataSource = self
-        reportsTableView.register(UINib(nibName: "ReportsTableViewCell", bundle: nil), forHeaderFooterViewReuseIdentifier: "ReportsTableViewCell")
+        reportsTableView.register(UINib(nibName: "ReportsTableViewCell", bundle: nil), forCellReuseIdentifier: "ReportsTableViewCell")
+            setDataForList()
     }
     
     func setDataForList(){
@@ -50,9 +55,9 @@ extension ReportsViewController: UITableViewDelegate, UITableViewDataSource{
         let name = reportsData[indexPath.row].user_name
         let image = reportsData[indexPath.row].image
         let date = reportsData[indexPath.row].date
-        let complintName = reportsData[indexPath.row].complaintsName
+        let complintName = reportsData[indexPath.row].complaintsName.localized()
         
-        cell.setCell(name: name, date: date, descrption: description,image:image)
+        cell.setCell(name: name, date: date, descrption: complintName,image:image)
         return cell
     }
     

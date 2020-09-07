@@ -20,6 +20,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeed
     
     //    MARK:- Outlet
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var sideMenuBtn: UIBarButtonItem!
     @IBOutlet weak var imageLabel: UILabel!{
         didSet{
@@ -87,6 +88,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeed
         setDataForComplaints()
         self.problemCollectionView.delegate = self
         self.problemCollectionView.dataSource = self
+        scrollView.contentSize = CGSize(width: 414, height: 800) 
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -157,6 +159,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeed
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         self.formData.latlng = "(\(locValue.latitude), \(locValue.longitude))"
         setMap(location:manager.location!, zoom: 15)
+        locationManager.stopUpdatingLocation()
+    }
+    
+     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+       print("\(error.localizedDescription)")
     }
     
     //    MARK:- Action
@@ -192,24 +199,35 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeed
     
     @IBAction func submitAction(_ sender: UIButton) {
         self.formData.comments = self.problemTextView.text ?? ""
-        print(self.formData)
+        //print(self.formData)
         if Constants.LoginObject?.isLogged ?? false {
             self.startAnimating()
             NetworkRequest.submitComplaints(parameter: self.formData) { (data, error) in
                 
                 if let data = data, error == nil{
                     if data == "OK"{
-                        var obj = UserDefaults.standard.retrieve(object: [ReportsList].self, fromKey: "Reports")
-                        let insertObj = ReportsList(user_name:self.formData.loginData.name , image: self.selectedImage, complaintsName: self.complaintsName)
-                        obj?.append(insertObj)
                         
+                        if var obj = UserDefaults.standard.retrieve(object: [ReportsList].self, fromKey: "Reports") {
+                            if let name  = UserDefaults.standard.retrieve(object: LoginObj.self, fromKey: "LoginObject")?.name{
+                        let insertObj = ReportsList(user_name: name , image: self.selectedImage, complaintsName: self.complaintsName)
+                            obj.append(insertObj)
+                            }
                         UserDefaults.standard.save(customObject: obj, inKey: "Reports")
+                        } else {
+                             if let name  = UserDefaults.standard.retrieve(object: LoginObj.self, fromKey: "LoginObject")?.name{
+                          let insertObj = ReportsList(user_name: name , image: self.selectedImage, complaintsName: self.complaintsName)
+                        UserDefaults.standard.save(customObject: [insertObj], inKey: "Reports")
+                            }
+                            
+                        }
+                     
                         if self.isAnimating{
                             self.stopAnimating()
                         }
                         self.showErrorAlert(title: "done".localized(), msg: "submit_done".localized())
                         self.clearData()
                     }else{
+                        self.stopAnimating()
                         self.showErrorAlert(title: "error".localized(), msg: data)
                     }
                 }

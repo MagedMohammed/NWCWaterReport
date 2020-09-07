@@ -8,7 +8,7 @@
 "cancel" = "الغاء";
 "submit" = "تقديم";
 "report_type" = "نوع البلاغ";
-"description" = "وصف المشكلة";
+"description" = "وصف المشكلة:";
 "water_misuse" = "سوء استخدام";
 "sewage_overflow" = "طفح صرف صحي";
 "leak_meter" = "تسريب من العداد";
@@ -27,7 +27,8 @@
 "eBranch" = "الفرع الإلكتروني";
 
 "water_reports" = "بلاغات المياه";
-"name" = "الإسم";
+"name" = "الإسم:";
+"date" = "التاريخ:";
 "email" = "البريد الإلكتروني";
 "register" = "تسجيل";
 "otp_message_error" = "من فضلك ادخل رمز OTP";
@@ -37,3 +38,5 @@
 "backSign" = "nextSign";
 "enter_the_sent_code" = "أدخل الكود المرسل";
 "verify" = "تحقق";
+
+"reports" = "التقارير";
