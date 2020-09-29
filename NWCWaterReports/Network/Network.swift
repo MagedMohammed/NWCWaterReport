@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 import AlamofireSoap
 import AEXML
 
@@ -64,7 +65,7 @@ class NetworkRequest{
             "mobileNumber":parameter.loginData.phoneNumber,
             "token": parameter.loginData.token,
             "complaintType":parameter.complaintsType,
-            "cbu": "TCBU",
+            "cbu": parameter.cbu ?? "",
             "deviceId": parameter.loginData.deviceId,
             "osVersion": parameter.loginData.osVersion,
             "appVersion":parameter.appVersion ?? "",
@@ -118,4 +119,50 @@ class NetworkRequest{
             }
         }
     }
+    
+static func getAddressFromLatLong(latitude: Double, longitude : Double, callBack: @escaping  ((Address)->())) {
+        let url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=\(latitude),\(longitude)&key=\(MAPS_KEY)"
+        
+        AF.request(url).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                
+                let responseJson = value as! NSDictionary
+                
+                if let results = responseJson.object(forKey: "results")! as? [NSDictionary] {
+                    if results.count > 0 {
+                        if let addressComponents = results[0]["address_components"]! as? [NSDictionary] {
+                            let address = results[0]["formatted_address"] as? String ?? ""
+                            var addressObj = Address()
+                            for component in addressComponents {
+                                if let temp = component.object(forKey: "types") as? [String] {
+                                    if (temp[0] == "postal_code") {
+                                        let pincode = component["long_name"] as? String
+                                        addressObj.pincode = pincode ?? ""
+                                    }
+                                    if (temp[0] == "locality") {
+                                        let city = component["long_name"] as? String
+                                        addressObj.city = city ?? ""
+                                    }
+                                    if (temp[0] == "administrative_area_level_1") {
+                                        let state = component["long_name"] as? String
+                                        addressObj.state = state ?? ""
+                                    }
+                                    if (temp[0] == "country") {
+                                        let country = component["long_name"] as? String
+                                        addressObj.country = country ?? ""
+                                    }
+                                }
+                            }
+                            callBack(addressObj)
+                        }
+                    }
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
+
+

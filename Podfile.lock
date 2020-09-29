@@ -3,11 +3,16 @@ PODS:
   - Alamofire (5.0.5)
   - AlamofireSoap (0.1.3):
     - Alamofire (~> 5.0.0-rc.2)
-  - GoogleMaps (3.10.0):
-    - GoogleMaps/Maps (= 3.10.0)
-  - GoogleMaps/Base (3.10.0)
-  - GoogleMaps/Maps (3.10.0):
+  - GoogleMaps (3.1.0):
+    - GoogleMaps/Maps (= 3.1.0)
+  - GoogleMaps/Base (3.1.0)
+  - GoogleMaps/Maps (3.1.0):
     - GoogleMaps/Base
+  - GooglePlacePicker (3.1.0):
+    - GoogleMaps (= 3.1.0)
+    - GooglePlaces (= 3.1.0)
+  - GooglePlaces (3.1.0):
+    - GoogleMaps/Base (= 3.1.0)
   - IBAnimatable (6.1.0)
   - IQKeyboardManager (6.5.6)
   - Localization (1.0.2)
@@ -20,6 +25,7 @@ DEPENDENCIES:
   - AEXML
   - AlamofireSoap
   - GoogleMaps
+  - GooglePlacePicker
   - IBAnimatable
   - IQKeyboardManager
   - Localization
@@ -32,6 +38,8 @@ SPEC REPOS:
     - Alamofire
     - AlamofireSoap
     - GoogleMaps
+    - GooglePlacePicker
+    - GooglePlaces
     - IBAnimatable
     - IQKeyboardManager
     - Localization
@@ -42,13 +50,15 @@ SPEC CHECKSUMS:
   AEXML: 0e8f1d874fa033ca6b3909452a8bc362faad46e6
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   AlamofireSoap: 3ff94d1b9a9dccc6fde075c8f5ee1986b78a0c23
-  GoogleMaps: 8c080862ff2748ece9929471b30feb56a6c5079d
+  GoogleMaps: 5c13302e6fe6bb6e686b267196586b91cd594225
+  GooglePlacePicker: fa975116ac202ac29822c0a79758ea1c4db5a95f
+  GooglePlaces: e874db179f2675c4f3eeda0b686b540273a578b0
   IBAnimatable: 99dddd4c0625884a301ba3ecbc1615f8a390368e
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Localization: d13a9844f5ebe66da4fade64a122ffeb0ffa547b
   NVActivityIndicatorView: f0a6b0ed2973d9544da268f4eb76696f0a9577b0
   SideMenu: 8ef57a3cfc024a2d3fc1c036c7fe98537baec9e0
 
-PODFILE CHECKSUM: cc345833d3017f375dcc1f437850ed1cf7132e98
+PODFILE CHECKSUM: 921cbde67ef795c0da605d3212de8318d47e84ad
 
 COCOAPODS: 1.9.3

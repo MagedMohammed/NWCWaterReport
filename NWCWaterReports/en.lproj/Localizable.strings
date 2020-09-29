@@ -38,5 +38,6 @@
 "backSign" = "backSign";
 "enter_the_sent_code" = "Enter The Sent Code";
 "verify" = "Verfiy";
-
+"error" = "Error";
 "reports" = "Reports";
+"not_in_cbu" = "This services is not Available in Your City";

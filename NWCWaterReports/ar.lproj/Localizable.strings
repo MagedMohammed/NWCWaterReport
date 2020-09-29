@@ -34,9 +34,9 @@
 "otp_message_error" = "من فضلك ادخل رمز OTP";
 "done" = "تم";
 "submit_done" = "تم ارسال البلاغ بنجاح";
-
 "backSign" = "nextSign";
 "enter_the_sent_code" = "أدخل الكود المرسل";
 "verify" = "تحقق";
-
-"reports" = "التقارير";
+"error" = "خطآ";
+"reports" = "تقارير";
+"not_in_cbu" = "هذه الخدمات غير متوفرة في مدينتك";
