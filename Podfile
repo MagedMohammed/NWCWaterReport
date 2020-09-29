@@ -8,6 +8,7 @@ target 'NWCWaterReports' do
   # Pods for NWCWaterReports
   #Maps
   pod 'GoogleMaps'
+  pod 'GooglePlacePicker'
   #  Desgin
   pod 'IBAnimatable'
   pod 'IQKeyboardManager' #iOS8 and later

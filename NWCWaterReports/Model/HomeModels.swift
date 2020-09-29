@@ -21,7 +21,7 @@ struct ComplaintsFormData{
     var image:[String?] = [String]()
     var complaintsType = String()
     var descrption = String()
-    var cbu = String()
+    var cbu:String?
     var loginData = LoginObj()
     var appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     var comments = String()

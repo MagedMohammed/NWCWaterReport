@@ -20,7 +20,17 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeed
     
     //    MARK:- Outlet
     
-    
+    @IBOutlet weak var imageCollectionView: UICollectionView!{
+        didSet{
+            self.imageCollectionView.delegate = self
+            self.imageCollectionView.dataSource = self
+        }
+    }
+    @IBOutlet weak var imageStackView: UIStackView!{
+        didSet{
+            imageStackView.isHidden = imagesArr.isEmpty
+        }
+    }
     
     @IBOutlet weak var sideMenuBtn: UIBarButtonItem!
     @IBOutlet weak var imageLabel: UILabel!{
@@ -77,11 +87,22 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeed
     var selectedImage = ""
     var complaintsName = ""
     let userdefults = UserDefaults.standard
-    
+    var imagesArr = [UIImage]()
+    var cities = [
+        City(name: "Riyadh", CBU: "RCBU"),
+        City(name: "Jeddah", CBU: "JCBU"),
+        City(name: "Makkah", CBU: "MCBU"),
+        City(name: "Taif", CBU: "TCBU"),
+        City(name: "Asier", CBU: "AS")
+    ]
+    /*
+     static var TankerCBU = ["RCBU","JCBU","MCBU","TCBU","AS"]
+     static let nwcCities = ["Riyadh","Makkah","Jeddah","Taif","الرياض","مكة","جدة","الطائف"]
+     
+     */
     //    MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "hamburger"), style: .done, target: self, action: #selector(didTapMenu))
         let lati = CLLocationDegrees(exactly: 24.774265) ??  CLLocationDegrees()
         let longi = CLLocationDegrees(exactly: 46.738586) ??  CLLocationDegrees()
         let location = CLLocation(latitude: lati, longitude: longi)
@@ -89,7 +110,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeed
         setDataForComplaints()
         self.problemCollectionView.delegate = self
         self.problemCollectionView.dataSource = self
-//        scrollView.contentSize = CGSize(width: 414, height: 800)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -161,10 +181,23 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeed
         self.formData.latlng = "(\(locValue.latitude), \(locValue.longitude))"
         setMap(location:manager.location!, zoom: 15)
         locationManager.stopUpdatingLocation()
+        NetworkRequest.getAddressFromLatLong(latitude: locValue.latitude, longitude: locValue.longitude) { address in
+            print(address.city)
+            for city in self.cities{
+                if city.name == address.city{
+                    self.formData.cbu = city.CBU
+                }else{
+                    continue
+                }
+            }
+            if self.formData.cbu == nil{
+                self.showErrorAlert(title: "error".localized(), msg: "not_in_cbu".localized())
+            }
+        }
     }
     
-     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-       print("\(error.localizedDescription)")
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("\(error.localizedDescription)")
     }
     
     //    MARK:- Action
@@ -199,6 +232,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeed
     }
     
     @IBAction func submitAction(_ sender: UIButton) {
+        guard self.formData.cbu != nil else{
+            self.showErrorAlert(title: "error".localized(), msg: "not_in_cbu".localized())
+            return
+        }
         self.formData.comments = self.problemTextView.text ?? ""
         //print(self.formData)
         if Constants.LoginObject?.isLogged ?? false {
@@ -210,18 +247,18 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeed
                         
                         if var obj = UserDefaults.standard.retrieve(object: [ReportsList].self, fromKey: "Reports") {
                             if let name  = UserDefaults.standard.retrieve(object: LoginObj.self, fromKey: "LoginObject")?.name{
-                        let insertObj = ReportsList(user_name: name , image: self.selectedImage, complaintsName: self.complaintsName)
-                            obj.append(insertObj)
+                                let insertObj = ReportsList(user_name: name , image: self.selectedImage, complaintsName: self.complaintsName)
+                                obj.append(insertObj)
                             }
-                        UserDefaults.standard.save(customObject: obj, inKey: "Reports")
+                            UserDefaults.standard.save(customObject: obj, inKey: "Reports")
                         } else {
-                             if let name  = UserDefaults.standard.retrieve(object: LoginObj.self, fromKey: "LoginObject")?.name{
-                          let insertObj = ReportsList(user_name: name , image: self.selectedImage, complaintsName: self.complaintsName)
-                        UserDefaults.standard.save(customObject: [insertObj], inKey: "Reports")
+                            if let name  = UserDefaults.standard.retrieve(object: LoginObj.self, fromKey: "LoginObject")?.name{
+                                let insertObj = ReportsList(user_name: name , image: self.selectedImage, complaintsName: self.complaintsName)
+                                UserDefaults.standard.save(customObject: [insertObj], inKey: "Reports")
                             }
                             
                         }
-                     
+                        
                         if self.isAnimating{
                             self.stopAnimating()
                         }
@@ -258,10 +295,29 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeed
 extension HomeViewController: UICollectionViewDelegate,  UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if collectionView == imageCollectionView {
+            return self.imagesArr.count
+        }
+        
         return complaintsList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView == imageCollectionView {
+            let cell:ImageCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as! ImageCollectionViewCell
+            let image = self.imagesArr[indexPath.row]
+            cell.imageImageView.image = image
+            cell.delete = {
+                self.imagesArr.remove(at: indexPath.row)
+                self.formData.image.remove(at: indexPath.row)
+                DispatchQueue.main.async {
+                    self.imageStackView.isHidden = self.imagesArr.isEmpty
+                    self.imageCollectionView.reloadData()
+                }
+            }
+            return cell
+        }
         let cell:ComplaintsCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ComplaintsCollectionViewCell", for: indexPath) as! ComplaintsCollectionViewCell
         let title = self.complaintsList[indexPath.row].title
         let isSelected = self.complaintsList[indexPath.row].isSelected
@@ -280,7 +336,6 @@ extension HomeViewController: UICollectionViewDelegate,  UICollectionViewDataSou
         self.formData.complaintsType = self.complaintsList[indexPath.row].id
         self.selectedImage = self.complaintsList[indexPath.row].selectedImage
         self.complaintsName = self.complaintsList[indexPath.row].title
-        
         collectionView.reloadData()
     }
 }
@@ -292,7 +347,10 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
         if let image = info[.originalImage] as? UIImage
         {
             let image2String = Constants.convertImageToBase64(image: image)
+            self.imagesArr.append(image)
             self.formData.image.append(image2String)
+            self.imageStackView.isHidden = false
+            self.imageCollectionView.reloadData()
             self.imageLabel.isHidden = false
             self.imageLabel.text = "\(self.formData.image.count)"
         }
