@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5gk-09-9EB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5gk-09-9EB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -339,11 +339,20 @@
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer-bg-1" translatesAutoresizingMaskIntoConstraints="NO" id="bcT-uf-1HH">
+                                                        <rect key="frame" x="0.0" y="218" width="414" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Grn-kj-KaJ"/>
+                                                        </constraints>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" name="GrayColor"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="bcT-uf-1HH" secondAttribute="bottom" id="2nX-4D-H8r"/>
                                                     <constraint firstItem="F6H-er-qQV" firstAttribute="centerX" secondItem="11L-VO-fpW" secondAttribute="centerX" id="RKh-X7-PFf"/>
                                                     <constraint firstItem="F6H-er-qQV" firstAttribute="top" secondItem="1Vq-6c-BrJ" secondAttribute="bottom" constant="30" id="VQr-Bk-dMc"/>
+                                                    <constraint firstItem="bcT-uf-1HH" firstAttribute="leading" secondItem="11L-VO-fpW" secondAttribute="leading" id="dIY-rQ-bJv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="bcT-uf-1HH" secondAttribute="trailing" id="eMW-Al-gCV"/>
                                                     <constraint firstItem="1Vq-6c-BrJ" firstAttribute="leading" secondItem="11L-VO-fpW" secondAttribute="leading" constant="16" id="lNW-0h-m8f"/>
                                                     <constraint firstAttribute="bottom" secondItem="F6H-er-qQV" secondAttribute="bottom" constant="30" id="luw-0f-U5H"/>
                                                     <constraint firstItem="1Vq-6c-BrJ" firstAttribute="top" secondItem="11L-VO-fpW" secondAttribute="top" constant="16" id="vzi-IL-9vz"/>
@@ -476,6 +485,7 @@
         <image name="a.circle.fill" catalog="system" width="128" height="121"/>
         <image name="camera-icon" width="64" height="50"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="footer-bg-1" width="360" height="30"/>
         <image name="gallery-icon" width="59" height="49"/>
         <image name="location-icon" width="51" height="51"/>
         <image name="text.justify" catalog="system" width="128" height="100"/>
