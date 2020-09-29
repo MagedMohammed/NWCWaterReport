@@ -92,8 +92,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ErrorFeed
         City(name: "Riyadh", CBU: "RCBU"),
         City(name: "Jeddah", CBU: "JCBU"),
         City(name: "Makkah", CBU: "MCBU"),
-        City(name: "Taif", CBU: "TCBU"),
-        City(name: "Asier", CBU: "AS")
+        City(name: "Taif", CBU: "TCBU")
     ]
     /*
      static var TankerCBU = ["RCBU","JCBU","MCBU","TCBU","AS"]
